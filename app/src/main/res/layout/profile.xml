@@ -12,7 +12,7 @@
         android:text="@string/profile_title"
         android:id="@+id/profile_text"
         android:layout_gravity="center"
-        android:textSize="32dp">
+        android:textSize="32sp">
     </TextView>
 
     <View
@@ -47,15 +47,15 @@
                 android:text="Pavan Yekbote"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
-                android:textSize="28dp"></TextView>
+                android:textSize="28sp" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginLeft="8dp"
-            android:gravity="left|center">
+            android:layout_marginStart="8dp"
+            android:gravity="start|center">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -65,14 +65,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="32dp"
-                    android:text="Skill: 2">
-                </TextView>
+                    android:textSize="32sp"
+                    android:text="Skill: 2"/>
 
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/star_symbol_icon"></ImageView>
+                    android:src="@drawable/star_symbol_icon" />
             </LinearLayout>
 
             <LinearLayout
@@ -83,14 +82,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="32dp"
-                    android:text="Conduct: 3">
-                </TextView>
+                    android:textSize="32sp"
+                    android:text="Conduct: 3"/>
 
                 <ImageView
                     android:layout_width="32dp"
                     android:layout_height="match_parent"
-                    android:src="@drawable/star_symbol_icon"></ImageView>
+                    android:src="@drawable/star_symbol_icon"/>
             </LinearLayout>
         </LinearLayout>
 
@@ -100,12 +98,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"
         android:text="I love playing games. please let me join, i am new here, i love to play games and skateboard cause thats just how i roll"
-        android:gravity="left|center"
-        android:textSize="28dp">
-    </TextView>
-
+        android:gravity="start|center"
+        android:textSize="28sp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -120,44 +116,39 @@
             android:layout_height="wrap_content"
             android:text="STATS"
             android:gravity="top|center"
-            android:textSize="28dp">
-        </TextView>
+            android:textSize="28sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Games played: 22"
-            android:gravity="left|center"
-            android:textSize="28dp">
-        </TextView>
+            android:gravity="start|center"
+            android:textSize="28sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Games hosted: 22"
-            android:gravity="left|center"
-            android:textSize="28dp">
-        </TextView>
+            android:gravity="start|center"
+            android:textSize="28sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Most played sport: Football"
-            android:gravity="left|center"
-            android:textSize="28dp">
-        </TextView>
+            android:gravity="start|center"
+            android:textSize="28sp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text="Account created: 09/11/2022"
-            android:gravity="left|center"
-            android:textSize="28dp">
-        </TextView>
+            android:gravity="start|center"
+            android:textSize="28sp"/>
     </LinearLayout>
 
 
