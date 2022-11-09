@@ -50,13 +50,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="20dp">
+            android:padding="10dp">
             <!--Sport type layout-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,7 +77,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -133,7 +133,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:padding="4dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -153,7 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:orientation="horizontal"
-                android:padding="8dp">
+                android:padding="4dp">
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -200,7 +200,7 @@
         <!--player profile summary-->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="280dp"
             android:scrollbarFadeDuration="0">
             <!--scrolling box-->
             <LinearLayout
@@ -208,7 +208,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:padding="20dp"
+                android:padding="16dp"
                 android:background="@drawable/square_border"
                 android:orientation="vertical" >
                 <!--individual player box1-->
@@ -560,12 +560,30 @@
                                 android:layout_height="wrap_content"
                                 app:srcCompat="@android:drawable/btn_star_big_on" />
                         </LinearLayout>
-
                     </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
 
+        <!--join and share buttons-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+            <Button
+                android:id="@+id/game_overview_join_button"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="JOIN"
+                android:textSize="24dp"/>
+            <ImageButton
+                android:id="@+id/game_overview_share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                app:srcCompat="@android:drawable/ic_menu_share" />
+        </LinearLayout>
     </LinearLayout>
 
 
