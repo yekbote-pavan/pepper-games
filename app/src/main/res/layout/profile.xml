@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:text="@string/profile_title"
+        android:text="PROFILE"
         android:layout_gravity="center"
         android:textSize="32sp">
     </TextView>
