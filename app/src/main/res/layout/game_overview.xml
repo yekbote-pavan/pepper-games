@@ -16,44 +16,35 @@
         android:padding="10dp">
         <!--Title-->
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="60dp"
+            <!--back-button-->
+            <ImageButton
+                android:id="@+id/imageButton_back_button"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-
-                <ImageButton
-                    android:id="@+id/imageButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="?attr/actionModeCloseDrawable" />
-
-            </LinearLayout>
-
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+            <!--Game-overview title-->
             <TextView
-                android:id="@+id/textView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="GAME OVERVIEW"
                 android:layout_gravity="center"
-                app:layout_anchor="@+id/linearLayout"
                 app:layout_anchorGravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="32sp"
                 android:layout_marginHorizontal="10dp" />
         </LinearLayout>
+
+        <!--line between title and game info-->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#c0c0c0"/>
+
         <!--Basic Game information-->
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,14 +59,13 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sport:"
                     android:textSize="24dp"
                     />
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView_sport_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Basketball"
@@ -90,14 +80,13 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Skills:"
                     android:textSize="24dp"
                     />
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView_skills_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
@@ -107,7 +96,6 @@
                     android:paddingRight="4dp"
                     />
                 <ImageView
-                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@android:drawable/btn_star_big_on" />
@@ -120,14 +108,13 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Conduct:"
                     android:textSize="24dp"
                     />
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView_conduct_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
@@ -137,7 +124,6 @@
                     android:paddingRight="4dp"
                     />
                 <ImageView
-                    android:id="@+id/imageView"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@android:drawable/btn_star_big_on" />
@@ -148,23 +134,19 @@
                 android:layout_height="48dp"
                 android:orientation="horizontal"
                 android:padding="8dp">
-
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Time & Date:"
+                    android:text="Time, Date:"
                     android:textSize="24dp"
                     />
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView_timendate_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5pm, 12/3/22"
                     android:textSize="24dp"
                     android:paddingHorizontal="8dp"/>
-
-
             </LinearLayout>
             <!--Location layout-->
             <LinearLayout
@@ -174,14 +156,13 @@
                 android:padding="8dp">
 
                 <TextView
-                    android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sport:"
+                    android:text="Location:"
                     android:textSize="24dp"
                     />
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView_location_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ARC, UIUC"
@@ -189,29 +170,40 @@
                     android:paddingHorizontal="8dp"/>
             </LinearLayout>
         </LinearLayout>
+
+        <!--horizontal line after game info-->
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:background="#c0c0c0"/>
-        <!--Team Members-->
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
+
+        <!--player profile summary title-->
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="People 7/10"
-            android:layout_gravity="center"
-            app:layout_anchor="@+id/linearLayout"
-            app:layout_anchorGravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:textSize="24dp"
-            android:layout_marginHorizontal="10dp" />
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Players: "
+                android:textSize="24dp"/>
+            <TextView
+                android:id="@+id/game_overview_player_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7/10"
+                android:textSize="24dp"/>
+        </LinearLayout>
+
+        <!--player profile summary-->
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:scrollbarFadeDuration="0">
+            <!--scrolling box-->
             <LinearLayout
-                android:id="@+id/layout_team"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -219,85 +211,358 @@
                 android:padding="20dp"
                 android:background="@drawable/square_border"
                 android:orientation="vertical" >
-                <TextView
-                    android:id="@+id/textView"
+                <!--individual player box1-->
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="person"
-                    android:layout_gravity="center"
-                    app:layout_anchor="@+id/linearLayout"
-                    app:layout_anchorGravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="24sp"
-                    android:layout_marginHorizontal="10dp" />
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="person"
-                    android:layout_gravity="center"
-                    app:layout_anchor="@+id/linearLayout"
-                    app:layout_anchorGravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="24sp"
-                    android:layout_marginHorizontal="10dp" />
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="person"
-                    android:layout_gravity="center"
-                    app:layout_anchor="@+id/linearLayout"
-                    app:layout_anchorGravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="24sp"
-                    android:layout_marginHorizontal="10dp" />
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="person"
-                    android:layout_gravity="center"
-                    app:layout_anchor="@+id/linearLayout"
-                    app:layout_anchorGravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="24sp"
-                    android:layout_marginHorizontal="10dp" />
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="person"
-                    android:layout_gravity="center"
-                    app:layout_anchor="@+id/linearLayout"
-                    app:layout_anchorGravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="24sp"
-                    android:layout_marginHorizontal="10dp" />
-                <TextView
-                    android:id="@+id/textView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="person"
-                    android:layout_gravity="center"
-                    app:layout_anchor="@+id/linearLayout"
-                    app:layout_anchorGravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textSize="24sp"
-                    android:layout_marginHorizontal="10dp" />
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/square_border"
+                    android:padding="4dp">
+                    <!--player profile image-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/player_profile_image_1"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            tools:srcCompat="@tools:sample/avatars"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"/>
+                    </LinearLayout>
+                    <!--user data-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/player_name_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pratt"
+                            android:textSize="24dp"
+                            android:gravity="center_horizontal"
+                            android:paddingHorizontal="4dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Skills:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_skills_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Conduct:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_conduct_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
 
+                    </LinearLayout>
+                </LinearLayout>
+                <!--individual player box2-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/square_border"
+                    android:padding="4dp">
+                    <!--player profile image-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/player_profile_image_2"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            tools:srcCompat="@tools:sample/avatars"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"/>
+                    </LinearLayout>
+                    <!--user data-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/player_name_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pratt"
+                            android:textSize="24dp"
+                            android:gravity="center_horizontal"
+                            android:paddingHorizontal="4dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Skills:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_skills_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Conduct:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_conduct_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--individual player box3-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/square_border"
+                    android:padding="4dp">
+                    <!--player profile image-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/player_profile_image_3"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            tools:srcCompat="@tools:sample/avatars"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"/>
+                    </LinearLayout>
+                    <!--user data-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/player_name_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pratt"
+                            android:textSize="24dp"
+                            android:gravity="center_horizontal"
+                            android:paddingHorizontal="4dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Skills:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_skills_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Conduct:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_conduct_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+                <!--individual player box4-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/square_border"
+                    android:padding="4dp">
+                    <!--player profile image-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:id="@+id/player_profile_image_4"
+                            android:layout_width="96dp"
+                            android:layout_height="96dp"
+                            tools:srcCompat="@tools:sample/avatars"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"/>
+                    </LinearLayout>
+                    <!--user data-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/player_name_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Pratt"
+                            android:textSize="24dp"
+                            android:gravity="center_horizontal"
+                            android:paddingHorizontal="4dp"/>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Skills:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_skills_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="3"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingHorizontal="4dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Conduct:"
+                                android:textSize="24dp"
+                                />
+                            <TextView
+                                android:id="@+id/player_conduct_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="4"
+                                android:textSize="24dp"
+                                android:gravity="center"
+                                android:paddingLeft="8dp"
+                                android:paddingRight="4dp"
+                                />
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@android:drawable/btn_star_big_on" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
             </LinearLayout>
         </ScrollView>
 
