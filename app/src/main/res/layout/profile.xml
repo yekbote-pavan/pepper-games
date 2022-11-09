@@ -1,16 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ProfileActivity">
 <LinearLayout
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
-
+    android:orientation="vertical">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="@string/profile_title"
-        android:id="@+id/profile_text"
         android:layout_gravity="center"
         android:textSize="32sp">
     </TextView>
@@ -26,7 +28,7 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="220dp"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center">
@@ -44,10 +46,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pavan Yekbote"
+                android:id="@+id/user_name"
+                android:text="PAVAN YEKBOTE"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
-                android:textSize="28sp" />
+                android:textSize="26sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -61,11 +64,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="32sp"
+                    android:id="@+id/user_skill_rating"
                     android:text="Skill: 2"/>
 
                 <ImageView
@@ -83,6 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="32sp"
+                    android:id="@+id/user_conduct_rating"
                     android:text="Conduct: 3"/>
 
                 <ImageView
@@ -95,18 +99,20 @@
     </LinearLayout>
 
     <TextView
+        android:id="@+id/user_bio"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_height="176dp"
         android:layout_marginStart="8dp"
-        android:text="I love playing games. please let me join, i am new here, i love to play games and skateboard cause thats just how i roll"
-        android:gravity="start|center"
-        android:textSize="28sp"/>
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:text="jdjksshfksdfjkdsfhjkdshfkjdshkfj jksdfjk sdhfjk dshfjk"
+        android:textSize="24sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:layout_gravity="bottom|center"
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:paddingTop="16dp">
@@ -118,39 +124,61 @@
             android:gravity="top|center"
             android:textSize="28sp"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Games played: 22"
-            android:gravity="start|center"
-            android:textSize="28sp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:id="@+id/user_games_played"
+                android:text="Games played: 22"
+                android:gravity="start|center"
+                android:textSize="28sp"/>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Games hosted: 22"
-            android:gravity="start|center"
-            android:textSize="28sp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:id="@+id/user_games_hosted"
+                android:text="Games hosted: 22"
+                android:gravity="start|center"
+                android:textSize="28sp"/>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Most played sport: Football"
-            android:gravity="start|center"
-            android:textSize="28sp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:id="@+id/user_favorite_sport"
+                android:text="Most played sport: Football"
+                android:gravity="start|center"
+                android:textSize="28sp"/>
+        </LinearLayout>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Account created: 09/11/2022"
-            android:gravity="start|center"
-            android:textSize="28sp"/>
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:id="@+id/user_account_created"
+                android:text="Account created: 22/01/2019"
+                android:gravity="start|center"
+                android:textSize="28sp"/>
+        </LinearLayout>
     </LinearLayout>
-
-
-
 </LinearLayout>
+</layout>
