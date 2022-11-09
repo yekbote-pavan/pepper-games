@@ -6,9 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -62,14 +59,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Sport:"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     />
                 <TextView
                     android:id="@+id/textView_sport_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Basketball"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     android:paddingHorizontal="8dp"/>
             </LinearLayout>
             <!--Skill level layout-->
@@ -83,14 +80,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Skills:"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     />
                 <TextView
                     android:id="@+id/textView_skills_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     android:gravity="center"
                     android:paddingLeft="8dp"
                     android:paddingRight="4dp"
@@ -111,14 +108,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Conduct:"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     />
                 <TextView
                     android:id="@+id/textView_conduct_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="3"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     android:gravity="center"
                     android:paddingLeft="8dp"
                     android:paddingRight="4dp"
@@ -138,14 +135,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Time, Date:"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     />
                 <TextView
                     android:id="@+id/textView_timendate_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5pm, 12/3/22"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     android:paddingHorizontal="8dp"/>
             </LinearLayout>
             <!--Location layout-->
@@ -159,14 +156,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Location:"
-                    android:textSize="24dp"
-                    />
+                    android:textSize="24sp"/>
                 <TextView
                     android:id="@+id/textView_location_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ARC, UIUC"
-                    android:textSize="24dp"
+                    android:textSize="24sp"
                     android:paddingHorizontal="8dp"/>
             </LinearLayout>
         </LinearLayout>
@@ -188,13 +184,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Players: "
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
             <TextView
                 android:id="@+id/game_overview_player_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="7/10"
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
         </LinearLayout>
 
         <!--player profile summary-->
@@ -241,7 +237,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pratt"
-                            android:textSize="24dp"
+                            android:textSize="24sp"
                             android:gravity="center_horizontal"
                             android:paddingHorizontal="4dp"/>
                         <LinearLayout
@@ -253,14 +249,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Skills:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_skills_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="3"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -279,14 +275,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Conduct:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_conduct_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -329,7 +325,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pratt"
-                            android:textSize="24dp"
+                            android:textSize="24sp"
                             android:gravity="center_horizontal"
                             android:paddingHorizontal="4dp"/>
                         <LinearLayout
@@ -341,14 +337,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Skills:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_skills_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="5"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -367,14 +363,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Conduct:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_conduct_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -417,7 +413,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pratt"
-                            android:textSize="24dp"
+                            android:textSize="24sp"
                             android:gravity="center_horizontal"
                             android:paddingHorizontal="4dp"/>
                         <LinearLayout
@@ -429,14 +425,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Skills:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_skills_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -455,14 +451,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Conduct:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_conduct_3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -505,7 +501,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Pratt"
-                            android:textSize="24dp"
+                            android:textSize="24sp"
                             android:gravity="center_horizontal"
                             android:paddingHorizontal="4dp"/>
                         <LinearLayout
@@ -517,14 +513,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Skills:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_skills_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="3"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -543,14 +539,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Conduct:"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 />
                             <TextView
                                 android:id="@+id/player_conduct_4"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="4"
-                                android:textSize="24dp"
+                                android:textSize="24sp"
                                 android:gravity="center"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="4dp"
@@ -577,7 +573,7 @@
                 android:layout_height="56dp"
                 android:layout_weight="1"
                 android:text="JOIN"
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
             <ImageButton
                 android:id="@+id/game_overview_share_button"
                 android:layout_width="wrap_content"
@@ -585,6 +581,4 @@
                 app:srcCompat="@android:drawable/ic_menu_share" />
         </LinearLayout>
     </LinearLayout>
-
-
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
