@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-
     <!--    <com.google.android.material.appbar.AppBarLayout-->
     <!--        android:layout_width="0dp"-->
     <!--        android:layout_height="wrap_content"-->
@@ -85,20 +84,152 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick your position"
+            android:id="@+id/title"
+            android:text="Pick Your Position"
             android:textSize="30dp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/black"
             android:textStyle="bold"
             />
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/soccer_field"
-            android:layout_marginBottom="-150dp"
-            android:text="Game Card: //////TBD//////"
-            android:textSize="30dp" />
+            android:layout_height="wrap_content">
+            <androidx.cardview.widget.CardView
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="0dp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:hint="Football"
+                            android:textColorHint="@color/black" />
+
+                        <ImageView
+                            android:layout_height="50dp"
+                            android:src="@drawable/football"
+                            android:layout_marginLeft = "0dp"
+                            android:maxWidth="1dp"
+                            android:layout_width="45dp"
+                            android:maxHeight="1dp"
+                            android:scaleType="fitCenter"></ImageView>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginLeft="100dp"
+                            android:maxWidth="1dp"
+                            android:maxHeight="1dp"
+                            android:scaleType="fitCenter"
+                            android:layout_marginTop="8dp"
+                            android:src="@drawable/calendar"></ImageView>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="6 am, 1st Dec 2022"
+                            android:layout_marginLeft="0dp"
+                            android:textColorHint="@color/black" />
+
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="left"
+                            android:hint="Skills: 5"
+                            android:textColorHint="@color/black" />
+
+                        <ImageView
+                            android:layout_height="39dp"
+                            android:src="@drawable/star"
+                            android:layout_marginLeft = "0dp"
+                            android:maxWidth="1dp"
+                            android:layout_width="50dp"
+                            android:maxHeight="1dp"
+                            android:scaleType="fitCenter"></ImageView>
+
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:hint="Conduct: 5"
+                            android:textColorHint="@color/black" />
+
+                        <ImageView
+                            android:layout_height="39dp"
+                            android:src="@drawable/star"
+                            android:layout_marginLeft = "0dp"
+                            android:maxWidth="1dp"
+                            android:layout_width="50dp"
+                            android:maxHeight="1dp"
+                            android:scaleType="fitCenter"></ImageView>
+
+                        <ImageView
+                            android:src="@drawable/location"
+                            android:layout_marginLeft = "70dp"
+                            android:layout_height="30dp"
+                            android:maxWidth="1dp"
+                            android:layout_width="30dp"
+                            android:maxHeight="1dp"
+                            android:scaleType="fitCenter"
+                            android:backgroundTint="#00002229"
+                            ></ImageView>
+                        <EditText
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="0dp"
+                            android:hint="ARC"
+                            android:textColorHint="@color/black"/>
+
+
+
+
+                    </LinearLayout>
+
+
+
+
+
+
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <!--        <TextView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_above="@+id/soccer_field"-->
+        <!--            android:layout_marginBottom="-110dp"-->
+        <!--            android:text="Game Card: //////TBD//////"-->
+        <!--            android:textSize="30dp" />-->
 
         <ImageView
             android:id="@+id/soccer_field"
