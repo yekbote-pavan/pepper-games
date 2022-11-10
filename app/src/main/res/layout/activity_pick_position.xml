@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!--    <com.google.android.material.appbar.AppBarLayout-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <androidx.appcompat.widget.Toolbar-->
+    <!--            android:id="@+id/toolbar"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="?attr/colorPrimary"-->
+    <!--            android:minHeight="?attr/actionBarSize"-->
+    <!--            android:theme="?attr/actionBarTheme"-->
+    <!--            tools:layout_editor_absoluteX="0dp"-->
+    <!--            tools:layout_editor_absoluteY="0dp">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/toolbar_title"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="center"-->
+    <!--                android:text="Pick a Position"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="25dp"-->
+    <!--                android:textStyle="bold" />-->
+
+    <!--            &lt;!&ndash;            <Button&ndash;&gt;-->
+    <!--            &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                android:layout_gravity="left"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                android:layout_marginLeft="0dp"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                android:drawableBottom="@drawable/back"&ndash;&gt;-->
+    <!--            &lt;!&ndash;                />&ndash;&gt;-->
+
+    <!--        </androidx.appcompat.widget.Toolbar>-->
+
+    <!--    </com.google.android.material.appbar.AppBarLayout>-->
+
+    <!--    <android.support.v7.widget.Toolbar-->
+    <!--        android:id="@+id/toolbar"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="?attr/actionBarSize"-->
+    <!--        android:background="?attr/colorPrimary"-->
+    <!--        app:popupTheme="@style/AppTheme.PopupOverlay">-->
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:text="Toolbar Title"-->
+    <!--            android:layout_gravity="center"-->
+    <!--            android:id="@+id/toolbar_title" />-->
+
+    <!--    </android.support.v7.widget.Toolbar>-->
+
+    <!--    <FrameLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent">-->
+    <!--        <ImageView-->
+    <!--            android:id="@+id/soccer_field"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:scaleType="centerCrop"-->
+    <!--            android:layout_gravity="top"-->
+    <!--            android:layout_marginTop="200dp"-->
+    <!--            android:layout_marginBottom="60dp"-->
+    <!--            android:src="@drawable/soccer_field" />-->
+    <!--        <ImageButton-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/roundedbutton" />-->
+    <!--    </FrameLayout>-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pick your position"
+            android:textSize="30dp"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/soccer_field"
+            android:layout_marginBottom="-150dp"
+            android:text="Game Card: //////TBD//////"
+            android:textSize="30dp" />
+
+        <ImageView
+            android:id="@+id/soccer_field"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="top"
+            android:layout_marginTop="150dp"
+            android:layout_marginBottom="60dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/soccer_field" />
+
+        <ImageButton
+            android:id="@+id/goalkeeper1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/soccer_field"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/goalkeeper2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/soccer_field"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"
+            android:src="@drawable/ic_round_person"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/leftMidfielder1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goalkeeper1"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="80dp"
+            android:src="@drawable/ic_round_person"
+            android:layout_toStartOf="@+id/centralMidfielder1"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/leftMidfielder2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/goalkeeper2"
+            android:layout_marginEnd="80dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_round_person"
+            android:layout_toStartOf="@+id/centralMidfielder2"
+            android:background="@drawable/roundedbutton" />
+
+
+        <ImageButton
+            android:id="@+id/rightMidfielder1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goalkeeper1"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="60dp"
+            android:src="@drawable/ic_round_person"
+            android:layout_toEndOf="@+id/centralMidfielder1"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/rightMidfielder2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/goalkeeper2"
+            android:layout_marginStart="80dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:layout_toEndOf="@+id/centralMidfielder2"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/centralMidfielder1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/goalkeeper1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_round_person"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/centralMidfielder2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/goalkeeper2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/leftStriker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/centralMidfielder1"
+            android:layout_alignStart="@+id/leftMidfielder1"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/ic_round_person"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/leftStriker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/centralMidfielder2"
+            android:layout_alignStart="@+id/leftMidfielder2"
+            android:layout_marginStart="60dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/rightStriker1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/centralMidfielder1"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:layout_alignEnd="@+id/rightMidfielder1"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="60dp"
+            android:background="@drawable/roundedbutton" />
+
+        <ImageButton
+            android:id="@+id/rightStriker2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/centralMidfielder2"
+            android:layout_alignEnd="@+id/rightMidfielder2"
+            android:layout_marginEnd="60dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:background="@drawable/roundedbutton" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
+                android:text="Surprise Me"
+                android:textAllCaps="false"
+                android:textSize="25dp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="fill_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:layout_weight="1"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:gravity="center">-->
+
+    <!--            <Button-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_gravity="bottom"-->
+    <!--                android:layout_marginTop="5dp"-->
+    <!--                android:text="Surprise Me" />-->
+
+    <!--        </LinearLayout>-->
+
+
+    <!--    </LinearLayout>-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
