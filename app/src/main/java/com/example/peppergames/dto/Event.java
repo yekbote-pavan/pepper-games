@@ -12,16 +12,7 @@ public class Event {
     private int maxPlayers;
     private String location;
     private boolean isPlaying;
-    private List<User> players;
     private Map<TeamEnum, Map<PositionEnum, User>> teamPositions;
-
-    public List<User> getPlayers() {
-        return players;
-    }
-
-    public void setPlayers(List<User> players) {
-        this.players = players;
-    }
 
     public Map<TeamEnum, Map<PositionEnum, User>> getTeamPositions() {
         return teamPositions;
@@ -31,14 +22,13 @@ public class Event {
         this.teamPositions = teamPositions;
     }
 
-    public Event(String game, int skillRating, int conductRating, String date, List<User> players,
+    public Event(String game, int skillRating, int conductRating, String date,
                  int maxPlayers, String location, boolean isPlaying,
                  Map<TeamEnum, Map<PositionEnum, User>> teamPositions) {
         this.game = game;
         this.skillRating = skillRating;
         this.conductRating = conductRating;
         this.date = date;
-        this.players = players;
         this.maxPlayers = maxPlayers;
         this.location = location;
         this.isPlaying = isPlaying;
