@@ -1,6 +1,5 @@
 package com.example.peppergames.dto;
 
-import java.util.List;
 import java.util.Map;
 
 public class Event {
@@ -14,14 +13,6 @@ public class Event {
     private boolean isPlaying;
     private Map<TeamEnum, Map<PositionEnum, User>> teamPositions;
 
-    public Map<TeamEnum, Map<PositionEnum, User>> getTeamPositions() {
-        return teamPositions;
-    }
-
-    public void setTeamPositions(Map<TeamEnum, Map<PositionEnum, User>> teamPositions) {
-        this.teamPositions = teamPositions;
-    }
-
     public Event(String game, int skillRating, int conductRating, String date,
                  int maxPlayers, String location, boolean isPlaying,
                  Map<TeamEnum, Map<PositionEnum, User>> teamPositions) {
@@ -32,6 +23,14 @@ public class Event {
         this.maxPlayers = maxPlayers;
         this.location = location;
         this.isPlaying = isPlaying;
+        this.teamPositions = teamPositions;
+    }
+
+    public Map<TeamEnum, Map<PositionEnum, User>> getTeamPositions() {
+        return teamPositions;
+    }
+
+    public void setTeamPositions(Map<TeamEnum, Map<PositionEnum, User>> teamPositions) {
         this.teamPositions = teamPositions;
     }
 
