@@ -48,6 +48,14 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+<!--        <activity-->
+<!--            android:name=".gameOverview"-->
+<!--            android:exported="true"-->
+<!--            android:label="EventsActivity"-->
+<!--            android:theme="@style/Theme.PepperGames.NoActionBar"-->
+<!--            >-->
+
+<!--        </activity>-->
     </application>
 
 </manifest>
