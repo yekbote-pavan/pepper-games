@@ -24,15 +24,12 @@ public class gameOverview extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        System.out.println("***************************");
-        System.out.println("Hello world");
         setContentView(R.layout.activity_game_overview);
 
         // Get the activity which was selected before this in the last screen somehow
         // for now we'll take the game at index 0
         int game_idx = 0;
         int cur_players = 0;
-        System.out.println(Database.events);
         //set game info attributes based on game_idx
         TextView textView = findViewById(R.id.textView_sport_name);
         textView.setText(Database.events.get(game_idx).getGame());
