@@ -73,4 +73,14 @@ public class Database {
 
         return currentPlayers;
     }
+
+    public static int getEventIndex(Event event) {
+        for (int i = 0; i < events.size(); i++) {
+            if (events.get(i).equals(event)) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

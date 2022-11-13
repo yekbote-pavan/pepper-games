@@ -23,11 +23,9 @@ public class AllEventsActivity extends AppCompatActivity {
         layout.removeAllViews();
 
         CardView cardView;
-        int eventIndex = 0;
 //        toDo: generate events based on sorted value
         for (Event event : Database.getEvents()) {
             if (event.isPlaying()) {
-                eventIndex++;
                 continue;
             }
 
@@ -46,24 +44,22 @@ public class AllEventsActivity extends AppCompatActivity {
             textView.setText(event.getDate());
 
             textView = cardView.findViewById(R.id.event_players);
-            textView.setText(String.format("%d/%d", Database.getCurrentPlayers(eventIndex), event.getMaxPlayers()));
+            textView.setText(String.format("%d/%d", Database.getCurrentPlayers(Database.getEventIndex(event)), event.getMaxPlayers()));
 
             textView = cardView.findViewById(R.id.event_location);
             textView.setText(event.getLocation());
 
-            int finalEventIndex = eventIndex;
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(AllEventsActivity.this, GameOverview.class);
-                    intent.putExtra("event_index", finalEventIndex);
+                    intent.putExtra("event_index", Database.getEventIndex(event));
                     intent.putExtra("is_join_allowed", true);
                     startActivity(intent);
                 }
             });
 
             layout.addView(cardView);
-            eventIndex++;
         }
     }
 }
