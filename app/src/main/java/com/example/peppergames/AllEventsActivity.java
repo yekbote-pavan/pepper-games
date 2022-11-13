@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.peppergames.dto.Event;
-import com.example.peppergames.dto.TeamEnum;
 
 public class AllEventsActivity extends AppCompatActivity {
 
@@ -45,13 +44,8 @@ public class AllEventsActivity extends AppCompatActivity {
             textView = cardView.findViewById(R.id.event_date_time);
             textView.setText(event.getDate());
 
-            int currentPlayers = 0;
-            for (TeamEnum key: event.getTeamPositions().keySet()) {
-                currentPlayers += event.getTeamPositions().get(key).keySet().size();
-            }
-
             textView = cardView.findViewById(R.id.event_players);
-            textView.setText(String.format("%d/%d", currentPlayers, event.getMaxPlayers()));
+            textView.setText(String.format("%d/%d", Database.getCurrentPlayers(eventIndex), event.getMaxPlayers()));
 
             textView = cardView.findViewById(R.id.event_location);
             textView.setText(event.getLocation());
@@ -60,8 +54,9 @@ public class AllEventsActivity extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(AllEventsActivity.this, MyEventsActivity.class);
+                    Intent intent = new Intent(AllEventsActivity.this, GameOverview.class);
                     intent.putExtra("event_index", finalEventIndex);
+                    intent.putExtra("is_join_allowed", true);
                     startActivity(intent);
                 }
             });

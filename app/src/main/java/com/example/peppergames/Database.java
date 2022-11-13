@@ -59,4 +59,18 @@ public class Database {
     public static List<Event> getEvents() {
         return events;
     }
+
+    public static Map<TeamEnum, Map<PositionEnum, User>> getPositions() {
+        return positions;
+    }
+
+    public static int getCurrentPlayers(int eventIndex) {
+        int currentPlayers = 0;
+        Event event = getEvents().get(eventIndex);
+        for (TeamEnum key: event.getTeamPositions().keySet()) {
+            currentPlayers += event.getTeamPositions().get(key).keySet().size();
+        }
+
+        return currentPlayers;
+    }
 }

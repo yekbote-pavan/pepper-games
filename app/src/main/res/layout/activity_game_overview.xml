@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <!--Title-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--back-button-->
+            <ImageButton
+                android:id="@+id/imageButton_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                app:srcCompat="?attr/actionModeCloseDrawable" />
+            <!--Game-overview title-->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="GAME OVERVIEW"
+                android:layout_gravity="center"
+                app:layout_anchorGravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="32sp"
+                android:layout_marginHorizontal="10dp" />
+        </LinearLayout>
+
+        <!--line between title and game info-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
+
+        <!--Basic Game information-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+            <!--Sport type layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sport:"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/textView_sport_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Basketball"
+                    android:textSize="24sp"
+                    android:paddingHorizontal="8dp"/>
+            </LinearLayout>
+            <!--Skill level layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skills:"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/textView_skills_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="4dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_star_big_on" />
+            </LinearLayout>
+            <!--Conduct level layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conduct:"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/textView_conduct_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3"
+                    android:textSize="24sp"
+                    android:gravity="center"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="4dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@android:drawable/btn_star_big_on" />
+            </LinearLayout>
+            <!--Date & time layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Time, Date:"
+                    android:textSize="24sp"
+                    />
+                <TextView
+                    android:id="@+id/textView_timendate_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5pm, 12/3/22"
+                    android:textSize="24sp"
+                    android:paddingHorizontal="8dp"/>
+            </LinearLayout>
+            <!--Location layout-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Location:"
+                    android:textSize="24sp"/>
+                <TextView
+                    android:id="@+id/textView_location_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ARC, UIUC"
+                    android:textSize="24sp"
+                    android:paddingHorizontal="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--horizontal line after game info-->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
+
+        <!--player profile summary title-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Players: "
+                android:textSize="24sp"/>
+            <TextView
+                android:id="@+id/game_overview_player_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7/10"
+                android:textSize="24sp"/>
+        </LinearLayout>
+
+        <!--player profile summary-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/game_overview"
+            android:scrollbarFadeDuration="0"
+            android:layout_height="280dp"/>
+
+        <!--join and share buttons-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingVertical="4dp">
+            <Button
+                android:id="@+id/game_overview_join_button"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:text="JOIN"
+                android:textSize="24sp"/>
+            <ImageButton
+                android:id="@+id/game_overview_share_button"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                app:srcCompat="@android:drawable/ic_menu_share" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
