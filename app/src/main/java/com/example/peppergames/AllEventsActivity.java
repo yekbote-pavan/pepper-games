@@ -27,6 +27,7 @@ public class AllEventsActivity extends AppCompatActivity {
 //        toDo: generate events based on sorted value
         for (Event event : Database.getEvents()) {
             if (event.isPlaying()) {
+                eventIndex++;
                 continue;
             }
 
@@ -38,7 +39,7 @@ public class AllEventsActivity extends AppCompatActivity {
             textView = cardView.findViewById(R.id.event_skill);
             textView.setText(String.format("Skills: %d", event.getSkillRating()));
 
-            textView = cardView.findViewById(R.id.event_skill);
+            textView = cardView.findViewById(R.id.event_conduct);
             textView.setText(String.format("Conduct: %d", event.getConductRating()));
 
             textView = cardView.findViewById(R.id.event_date_time);
