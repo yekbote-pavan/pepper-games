@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -61,5 +62,14 @@ public class MyEventsActivity extends AppCompatActivity {
 
             layout.addView(cardView);
         }
+
+        ImageButton button = findViewById(R.id.my_event_user_profile_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MyEventsActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

@@ -67,7 +67,6 @@ public class AllEventsActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.print("here");
                 Intent intent = new Intent(AllEventsActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }

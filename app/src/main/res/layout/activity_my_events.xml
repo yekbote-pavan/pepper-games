@@ -8,28 +8,28 @@
     tools:ignore="InefficientWeight, SpeakableTextPresentCheck, HardcodedText">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:orientation="horizontal">
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="61dp"
-            android:layout_weight="4"
-            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Events"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColorHint="@color/black"
+            android:layout_gravity="center"
+            android:layout_marginStart="164dp"
             tools:ignore="InefficientWeight" />
 
-        <ImageView
+        <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#00002229"
-            android:maxWidth="65dp"
-            android:maxHeight="65dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/user_profile_icon"
+            android:maxHeight="44dp"
+            android:layout_marginStart="124dp"
             android:scaleType="fitCenter"
-            android:src="@drawable/profile"
-            android:contentDescription="Profile image" />
+            android:id="@+id/my_event_user_profile_button"
+            android:clickable="true"
+            android:focusable="true"/>
     </LinearLayout>
 
     <LinearLayout
