@@ -51,561 +51,60 @@
             style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
 
-    <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="500dp">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/event_scroll">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/event_outer_layout"
             android:orientation="vertical">
-            <androidx.cardview.widget.CardView
-                android:clickable="true"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="20dp"
-                android:focusable="true">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="Football"
-                            android:layout_marginStart="120dp"
-                            android:textColorHint="@color/black" />
-
-                        <ImageView
-                            android:layout_height="39dp"
-                            android:src="@drawable/football"
-                            android:layout_marginStart = "0dp"
-                            android:maxWidth="1dp"
-                            android:layout_width="50dp"
-                            android:maxHeight="1dp"
-                            android:scaleType="fitCenter"/>
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="Skills: 5"
-                            android:layout_marginStart="120dp"
-                            android:textColorHint="@color/black" />
-                        <ImageView
-                            android:layout_height="39dp"
-                            android:src="@drawable/star"
-                            android:layout_marginStart = "0dp"
-                            android:maxWidth="1dp"
-                            android:layout_width="50dp"
-                            android:maxHeight="1dp"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="Rating star" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="Conduct: 5"
-                            android:layout_marginStart="120dp"
-                            android:textColorHint="@color/black" />
-
-                        <ImageView
-                            android:layout_height="39dp"
-                            android:src="@drawable/star"
-                            android:layout_marginStart = "0dp"
-                            android:maxWidth="1dp"
-                            android:layout_width="50dp"
-                            android:maxHeight="1dp"
-                            android:scaleType="fitCenter"
-                            android:contentDescription="Rating star" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="39dp"
-                            android:layout_marginStart="70dp"
-                            android:maxWidth="1dp"
-                            android:maxHeight="1dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/calendar"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:hint="6 am, 1st Dec 2022"
-                            android:layout_marginStart="0dp"
-                            android:textColorHint="@color/black" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="39dp"
-                            android:layout_marginStart="15dp"
-                            android:maxWidth="1dp"
-                            android:maxHeight="1dp"
-                            android:scaleType="fitCenter"
-                            android:src="@drawable/stickman"
-                            android:backgroundTint="#00002229"
-                            android:contentDescription="Stick figure" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
-                            android:hint="7/10"
-                            android:textColorHint="@color/black"
-                            tools:ignore="TouchTargetSizeCheck" />
-
-                        <ImageView
-                            android:src="@drawable/location"
-                            android:layout_marginStart = "150dp"
-                            android:layout_height="39dp"
-                            android:maxWidth="1dp"
-                            android:layout_width="50dp"
-                            android:maxHeight="1dp"
-                            android:scaleType="fitCenter"
-                            android:backgroundTint="#00002229"
-                            android:contentDescription="location icon"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="0dp"
-                            android:hint="ARC"
-                            android:textColorHint="@color/black" />
-                    </LinearLayout>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
         </LinearLayout>
-
-
-<!--                <androidx.cardview.widget.CardView-->
-<!--                    android:clickable="true"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:layout_marginTop="20dp"-->
-<!--                    android:layout_marginRight="20dp">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="Basketball"-->
-<!--                                android:layout_marginLeft="120dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_height="29dp"-->
-<!--                                android:src="@drawable/basketball"-->
-<!--                                android:layout_marginLeft = "0dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="40dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"></ImageView>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="Skills: 4"-->
-<!--                                android:layout_marginLeft="120dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:src="@drawable/star"-->
-<!--                                android:layout_marginLeft = "0dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"></ImageView>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="Conduct: 4"-->
-<!--                                android:layout_marginLeft="120dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:src="@drawable/star"-->
-<!--                                android:layout_marginLeft = "0dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"></ImageView>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:layout_marginLeft="70dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"-->
-<!--                                android:src="@drawable/calendar"></ImageView>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="7PM, 2nd Dec 2022"-->
-<!--                                android:layout_marginLeft="0dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:layout_marginLeft="15dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"-->
-<!--                                android:src="@drawable/stickman"-->
-<!--                                android:backgroundTint="#00002229"></ImageView>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginLeft="0dp"-->
-<!--                                android:hint="6/10"-->
-<!--                                android:textColorHint="@color/black"-->
-<!--                                tools:ignore="TouchTargetSizeCheck" />-->
-<!--                            <ImageView-->
-<!--                                android:src="@drawable/location"-->
-<!--                                android:layout_marginLeft = "150dp"-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"-->
-<!--                                android:backgroundTint="#00002229"-->
-<!--                                ></ImageView>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginLeft="0dp"-->
-<!--                                android:hint="CRCE"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                    </LinearLayout>-->
-
-
-<!--                </androidx.cardview.widget.CardView>-->
-
-<!--                <androidx.cardview.widget.CardView-->
-
-<!--                    android:clickable="true"-->
-<!--                    android:layout_width="wrap_content"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_marginLeft="20dp"-->
-<!--                    android:layout_marginTop="20dp"-->
-<!--                    android:layout_marginRight="20dp">-->
-
-<!--                    <LinearLayout-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:orientation="vertical">-->
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="Football"-->
-<!--                                android:layout_marginLeft="120dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:src="@drawable/football"-->
-<!--                                android:layout_marginLeft = "0dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"></ImageView>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="Skills: 3"-->
-<!--                                android:layout_marginLeft="120dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:src="@drawable/star"-->
-<!--                                android:layout_marginLeft = "0dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"></ImageView>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="Conduct: 4"-->
-<!--                                android:layout_marginLeft="120dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:src="@drawable/star"-->
-<!--                                android:layout_marginLeft = "0dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"></ImageView>-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:layout_marginLeft="70dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"-->
-<!--                                android:src="@drawable/calendar"></ImageView>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:gravity="center"-->
-<!--                                android:hint="6 am, 4th, Dec 2022"-->
-<!--                                android:layout_marginLeft="0dp"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-
-<!--                        </LinearLayout>-->
-
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="wrap_content"-->
-<!--                            android:layout_height="wrap_content"-->
-<!--                            android:orientation="horizontal">-->
-
-<!--                            <ImageView-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:layout_marginLeft="15dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"-->
-<!--                                android:src="@drawable/stickman"-->
-<!--                                android:backgroundTint="#00002229"></ImageView>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginLeft="0dp"-->
-<!--                                android:hint="7/10"-->
-<!--                                android:textColorHint="@color/black"-->
-<!--                                tools:ignore="TouchTargetSizeCheck" />-->
-<!--                            <ImageView-->
-<!--                                android:src="@drawable/location"-->
-<!--                                android:layout_marginLeft = "150dp"-->
-<!--                                android:layout_height="39dp"-->
-<!--                                android:maxWidth="1dp"-->
-<!--                                android:layout_width="50dp"-->
-<!--                                android:maxHeight="1dp"-->
-<!--                                android:scaleType="fitCenter"-->
-<!--                                android:backgroundTint="#00002229"-->
-<!--                                ></ImageView>-->
-
-<!--                            <TextView-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:layout_marginLeft="0dp"-->
-<!--                                android:hint="ARC"-->
-<!--                                android:textColorHint="@color/black" />-->
-
-
-<!--                        </LinearLayout>-->
-
-
-<!--                    </LinearLayout>-->
-
-
-<!--                </androidx.cardview.widget.CardView>-->
-
-
-<!--            </LinearLayout>-->
-
-        </ListView>
-
-        <!--        <ImageButton-->
-        <!--            android:layout_width="100dp"-->
-        <!--            android:layout_height="100dp"-->
-        <!--            android:layout_marginStart="300dp"-->
-        <!--            android:layout_marginLeft="150dp"-->
-        <!--            android:layout_marginTop="1dp"-->
-        <!--            android:layout_marginBottom="0dp"-->
-        <!--            android:backgroundTint="#00002229"-->
-        <!--            android:scaleType="fitCenter"-->
-
-        <!--            android:src="@drawable/add"></ImageButton>-->
-
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_gravity="end|bottom"
-            android:layout_marginRight="20dp"
-            android:contentDescription="this is a floating button"
-            android:outlineSpotShadowColor="@color/white"
-            card_view:fabSize="mini"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-        <LinearLayout
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="this is a floating button"
+        android:outlineSpotShadowColor="@color/white"
+        card_view:fabSize="mini" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal">
+            android:rotationX="-4"
+            android:text="All Sports"
+            android:visibility="visible"
+            tools:visibility="visible"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="0dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="120dp"
+            android:text="Date"/>
 
-            </LinearLayout>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:rotationX="-4"
-                android:text="All Sports"
-                android:visibility="visible"
-                tools:visibility="visible">
-
-            </Button>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
-                android:text="Date">
-
-            </Button>
-
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="0dp"
-                android:backgroundTint="#00002229"
-                android:maxWidth="1dp"
-                android:maxHeight="1dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/arrow"
-                android:contentDescription="sorting arrow" />
-        </LinearLayout>
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="0dp"
+            android:backgroundTint="#00002229"
+            android:maxWidth="1dp"
+            android:maxHeight="1dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrow"
+            android:contentDescription="sorting arrow" />
     </LinearLayout>
 
-<!--</FrameLayout>-->
+</LinearLayout>
+

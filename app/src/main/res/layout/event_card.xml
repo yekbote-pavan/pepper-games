@@ -1,0 +1,145 @@
+<androidx.cardview.widget.CardView
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="20dp"
+    android:id="@+id/event_card"
+    android:focusable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText, ContentDescription">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Football"
+                android:textSize="24sp"
+                android:id="@+id/event_game"
+                android:textColor="@color/black" />
+            <ImageView
+                android:layout_height="wrap_content"
+                android:layout_width="42dp"
+                android:src="@drawable/football"
+                android:scaleType="fitCenter"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Skills: 5"
+                android:textSize="20sp"
+                android:paddingTop="8dp"
+                android:id="@+id/event_skill"
+                android:textColor="@color/black" />
+            <ImageView
+                android:layout_height="match_parent"
+                android:src="@drawable/star"
+                android:layout_width="38dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Rating star" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Conduct: 5"
+                android:textSize="20sp"
+                android:paddingTop="8dp"
+                android:id="@+id/event_conduct"
+                android:textColor="@color/black" />
+            <ImageView
+                android:layout_height="match_parent"
+                android:src="@drawable/star"
+                android:layout_width="38dp"
+                android:scaleType="fitCenter"
+                android:contentDescription="Rating star" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:src="@drawable/calendar"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="6 am, 1st Dec 2022"
+                android:id="@+id/event_date_time"
+                android:textSize="20sp"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:paddingBottom="8dp">
+            <ImageView
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                android:layout_marginStart="12dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/stickman"
+                android:backgroundTint="#00002229"
+                android:contentDescription="Stick figure" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAlignment="center"
+                android:text="7/10"
+                android:id="@+id/event_players"
+                android:textSize="24sp"
+                android:textColorHint="@color/black"/>
+
+            <ImageView
+                android:src="@drawable/location"
+                android:layout_gravity="end"
+                android:layout_height="match_parent"
+                android:layout_width="48dp"
+                android:scaleType="fitCenter"
+                android:backgroundTint="#00002229"
+                android:layout_marginStart="162dp"
+                android:contentDescription="location icon"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:hint="ARC"
+                android:textSize="24sp"
+                android:id="@+id/event_location"
+                android:textColorHint="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

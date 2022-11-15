@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PepperGames"
         tools:targetApi="31">
         <activity
-            android:name=".gameOverview"
+            android:name=".GameOverview"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

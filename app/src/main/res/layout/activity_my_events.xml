@@ -1,465 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
+<LinearLayout android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical">
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="InefficientWeight, SpeakableTextPresentCheck, HardcodedText">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="61dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="Events"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColorHint="@color/black"
+            tools:ignore="InefficientWeight" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:backgroundTint="#00002229"
+            android:maxWidth="65dp"
+            android:maxHeight="65dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/profile"
+            android:contentDescription="Profile image" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="204dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:text="ALL EVENTS"
+            style="?android:attr/buttonBarButtonStyle" />
 
-            <EditText
-                android:layout_width="353dp"
-                android:layout_height="61dp"
-                android:layout_weight="4"
-                android:gravity="center"
-                android:hint="Events"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                android:textColorHint="@color/black" />
-
-            <ImageButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:maxWidth="65dp"
-                android:maxHeight="65dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/profile"
-                android:backgroundTint="#00002229"></ImageButton>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="204dp"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#77002229"
-                android:text="ALL EVENTS"></Button>
-
-            <Button
-                android:layout_width="204dp"
-                android:layout_height="wrap_content"
-                android:text="MY EVENTS"></Button>
-
-        </LinearLayout>
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="460dp">
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                >
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="Football"
-                                android:layout_marginLeft="120dp"
-                                android:textColorHint="@color/black" />
-
-                            <ImageView
-                                android:layout_height="39dp"
-                                android:src="@drawable/football"
-                                android:layout_marginLeft = "0dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"></ImageView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="Skills: 5"
-                                android:layout_marginLeft="120dp"
-                                android:textColorHint="@color/black" />
-
-                            <ImageView
-                                android:layout_height="39dp"
-                                android:src="@drawable/star"
-                                android:layout_marginLeft = "0dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"></ImageView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="Conduct: 5"
-                                android:layout_marginLeft="120dp"
-                                android:textColorHint="@color/black" />
-
-                            <ImageView
-                                android:layout_height="39dp"
-                                android:src="@drawable/star"
-                                android:layout_marginLeft = "0dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"></ImageView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="39dp"
-                                android:layout_marginLeft="70dp"
-                                android:maxWidth="1dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/calendar"></ImageView>
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="6 am, 1st Dec 2022"
-                                android:layout_marginLeft="0dp"
-                                android:textColorHint="@color/black" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="39dp"
-                                android:layout_marginLeft="15dp"
-                                android:maxWidth="1dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/stickman"
-                                android:backgroundTint="#00002229"></ImageView>
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="0dp"
-                                android:hint="7/10"
-                                android:textColorHint="@color/black"
-                                tools:ignore="TouchTargetSizeCheck" />
-                            <ImageView
-                                android:src="@drawable/location"
-                                android:layout_marginLeft = "150dp"
-                                android:layout_height="39dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"
-                                android:backgroundTint="#00002229"
-                                ></ImageView>
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="0dp"
-                                android:hint="ARC"
-                                android:textColorHint="@color/black" />
-
-
-                        </LinearLayout>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="LEAVE"></Button>
-
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="20dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="Basketball"
-                                android:layout_marginLeft="120dp"
-                                android:textColorHint="@color/black" />
-
-                            <ImageView
-                                android:layout_height="29dp"
-                                android:src="@drawable/basketball"
-                                android:layout_marginLeft = "0dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="40dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"></ImageView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="Skills: 4"
-                                android:layout_marginLeft="120dp"
-                                android:textColorHint="@color/black" />
-
-                            <ImageView
-                                android:layout_height="39dp"
-                                android:src="@drawable/star"
-                                android:layout_marginLeft = "0dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"></ImageView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="Conduct: 4"
-                                android:layout_marginLeft="120dp"
-                                android:textColorHint="@color/black" />
-
-                            <ImageView
-                                android:layout_height="39dp"
-                                android:src="@drawable/star"
-                                android:layout_marginLeft = "0dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"></ImageView>
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="39dp"
-                                android:layout_marginLeft="70dp"
-                                android:maxWidth="1dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/calendar"></ImageView>
-
-                            <EditText
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:hint="7PM, 2nd Dec 2022"
-                                android:layout_marginLeft="0dp"
-                                android:textColorHint="@color/black" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="50dp"
-                                android:layout_height="39dp"
-                                android:layout_marginLeft="15dp"
-                                android:maxWidth="1dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"
-                                android:src="@drawable/stickman"
-                                android:backgroundTint="#00002229"></ImageView>
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="0dp"
-                                android:hint="3/10"
-                                android:textColorHint="@color/black"
-                                tools:ignore="TouchTargetSizeCheck" />
-                            <ImageView
-                                android:src="@drawable/location"
-                                android:layout_marginLeft = "150dp"
-                                android:layout_height="39dp"
-                                android:maxWidth="1dp"
-                                android:layout_width="50dp"
-                                android:maxHeight="1dp"
-                                android:scaleType="fitCenter"
-                                android:backgroundTint="#00002229"
-                                ></ImageView>
-
-                            <EditText
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="0dp"
-                                android:hint="CRCE"
-                                android:textColorHint="@color/black" />
-
-
-                        </LinearLayout>
-
-                        <Button
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="LEAVE"></Button>
-
-
-                    </LinearLayout>
-
-
-                </androidx.cardview.widget.CardView>
-
-
-            </LinearLayout>
-
-        </ScrollView>
-
-        <ImageButton
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginStart="300dp"
-            android:layout_marginLeft="150dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="0dp"
-            android:backgroundTint="#00002229"
-            android:scaleType="fitCenter"
-
-            android:src="@drawable/add"></ImageButton>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-            </LinearLayout>
-
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:rotationX="-4"
-                android:text="All Sports"
-                android:visibility="visible"
-                tools:visibility="visible">
-
-            </Button>
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="120dp"
-                android:text="Date">
-
-            </Button>
-
-            <ImageButton
-                android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="0dp"
-                android:maxWidth="1dp"
-                android:maxHeight="1dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/arrow"
-                android:backgroundTint="#00002229">
-            </ImageButton>
-
-
-        </LinearLayout>
-
-
+            android:backgroundTint="#77002229"
+            android:text="MY EVENTS"
+            style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>
 
-</FrameLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/event_scroll">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_event_outer_layout"
+            android:orientation="vertical">
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="end|bottom"
+        android:layout_marginEnd="20dp"
+        android:contentDescription="this is a floating button"
+        android:outlineSpotShadowColor="@color/white"
+        card_view:fabSize="mini" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:rotationX="-4"
+            android:text="All Sports"
+            android:visibility="visible"
+            tools:visibility="visible"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:text="Date"/>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:backgroundTint="#00002229"
+            android:scaleType="fitCenter"
+            android:src="@drawable/arrow"
+            android:contentDescription="sorting arrow" />
+    </LinearLayout>
+
+</LinearLayout>
+
