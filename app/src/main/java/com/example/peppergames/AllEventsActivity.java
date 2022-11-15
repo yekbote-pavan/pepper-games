@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -11,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.peppergames.dto.Event;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AllEventsActivity extends AppCompatActivity {
 
@@ -61,5 +63,24 @@ public class AllEventsActivity extends AppCompatActivity {
 
             layout.addView(cardView);
         }
+
+        ImageButton button = findViewById(R.id.event_user_profile_button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AllEventsActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                toDo: link to smit create event
+                Intent intent = new Intent(AllEventsActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
