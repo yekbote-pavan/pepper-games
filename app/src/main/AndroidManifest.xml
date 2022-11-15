@@ -13,7 +13,21 @@
         android:theme="@style/Theme.PepperGames"
         tools:targetApi="31">
         <activity
-            android:name=".PickPosition"
+            android:name=".GameOverview"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".MyEventsActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AllEventsActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -34,6 +48,21 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
+        <activity
+            android:name=".PickPosition"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <!--        <activity-->
+        <!--            android:name=".gameOverview"-->
+        <!--            android:exported="true"-->
+        <!--            android:label="EventsActivity"-->
+        <!--            android:theme="@style/Theme.PepperGames.NoActionBar"-->
+        <!--            >-->
+
+        <!--        </activity>-->
     </application>
 
 </manifest>

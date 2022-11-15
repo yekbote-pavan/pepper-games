@@ -1,5 +1,6 @@
 package com.example.peppergames;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.peppergames.dto.PositionEnum;
@@ -48,6 +51,15 @@ public class GameOverview extends AppCompatActivity {
         cur_players = Database.getCurrentPlayers(game_idx);
         textView.setText(String.format("%d/%d", cur_players, Database.getEvents().get(game_idx).getMaxPlayers()));
 
+        Button joinButton = findViewById(R.id.game_overview_join_button);
+        joinButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GameOverview.this, PickPosition.class);
+                intent.putExtra("event_index", game_idx);
+                startActivity(intent);
+            }
+        });
         // Dynamic scroll view
         RecyclerView rv = findViewById(R.id.game_overview);
         StaggeredGridLayoutManager gs = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);

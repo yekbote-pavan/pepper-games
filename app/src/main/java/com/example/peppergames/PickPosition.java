@@ -2,9 +2,11 @@ package com.example.peppergames;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 import com.example.peppergames.dto.Event;
 import com.example.peppergames.dto.PositionEnum;
@@ -32,21 +34,23 @@ public class PickPosition extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_position);
+        Intent intent = getIntent();
+        int eventIndex = intent.getIntExtra("event_index", -1);
 
-        current_event = Database.getEvents().get(0);
+        current_event = Database.getEvents().get(eventIndex);
         EditText text = findViewById(R.id.game_type);
         text.setText(current_event.getGame());
 
         text = findViewById(R.id.game_date);
         text.setText(current_event.getDate());
 
-        text = findViewById(R.id.game_skill_rating);
-        text.setText(current_event.getSkillRating());
+        text = findViewById(R.id.position_game_skill_rating);
+        text.setText(String.format("Skills: %d", current_event.getSkillRating()));
 
-        text = findViewById(R.id.game_conduct_rating);
-        text.setText(current_event.getConductRating());
+        text = findViewById(R.id.position_game_conduct_rating);
+        text.setText(String.format("Conduct: %d", current_event.getConductRating()));
 
-        text = findViewById(R.id.game_location);
+        text = findViewById(R.id.position_game_location);
         text.setText(current_event.getLocation());
 
         // update occupied positions with a different image: ic_round_person
@@ -61,7 +65,7 @@ public class PickPosition extends AppCompatActivity {
         }
 
         Map<PositionEnum, User> awayTeam = current_event.getTeamPositions().get(TeamEnum.AWAY);
-        for (Map.Entry<PositionEnum, User> entry : homeTeam.entrySet()){
+        for (Map.Entry<PositionEnum, User> entry : awayTeam.entrySet()){
             PositionEnum pos = entry.getKey();
             User user = entry.getValue();
             String id_str = position_dict.get(pos) + "2";
@@ -69,8 +73,5 @@ public class PickPosition extends AppCompatActivity {
             current_button = (ImageButton) findViewById(id);
             current_button.setImageResource(R.drawable.ic_round_person);
         }
-
-
-
     }
 }
