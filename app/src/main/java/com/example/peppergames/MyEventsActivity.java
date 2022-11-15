@@ -2,7 +2,9 @@ package com.example.peppergames;
 
 import android.os.Bundle;
 
-public class MyEventsActivity extends EventsActivity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MyEventsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

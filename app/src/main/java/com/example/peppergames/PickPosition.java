@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class PickPosition extends EventsActivity {
+public class PickPosition extends AppCompatActivity {
 
     private Event current_event;
     private ImageButton current_button;

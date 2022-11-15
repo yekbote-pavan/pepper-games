@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/GO_card_1"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/square_border"
+    android:padding="4dp">
+    <!--                    name-->
+    <ImageView
+        android:id="@+id/player_profile_image_0"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        tools:srcCompat="@tools:sample/avatars"
+        android:adjustViewBounds="true"
+        android:padding="4dp"/>
+    <TextView
+        android:id="@+id/player_name_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pratt"
+        android:textSize="24sp"
+        android:gravity="center_horizontal"
+        android:layout_toRightOf="@id/player_profile_image_0"
+        android:paddingHorizontal="4dp"/>
+    <!--                    skills-->
+    <TextView
+        android:id="@+id/skill_tag_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skills:"
+        android:textSize="24sp"
+        android:layout_toRightOf="@id/player_profile_image_0"
+        android:layout_below="@id/player_name_0"
+        android:paddingHorizontal="4dp"/>
+    <TextView
+        android:id="@+id/player_skills_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="4dp"
+        android:layout_toRightOf="@id/skill_tag_0"
+        android:layout_below="@id/player_name_0"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:layout_below="@id/player_name_0"
+        android:layout_toRightOf="@id/player_skills_0"/>
+    <!--                        conduct-->
+    <TextView
+        android:id="@+id/conduct_tag_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Conduct:"
+        android:textSize="24sp"
+        android:layout_toRightOf="@id/player_profile_image_0"
+        android:layout_below="@id/skill_tag_0"
+        android:paddingHorizontal="4dp"/>
+    <TextView
+        android:id="@+id/player_conduct_0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3"
+        android:textSize="24sp"
+        android:gravity="center"
+        android:paddingLeft="8dp"
+        android:paddingRight="4dp"
+        android:layout_toRightOf="@id/conduct_tag_0"
+        android:layout_below="@id/player_skills_0"
+        />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:layout_below="@id/player_skills_0"
+        android:layout_toRightOf="@id/player_conduct_0"/>
+
+</RelativeLayout>
+
+
