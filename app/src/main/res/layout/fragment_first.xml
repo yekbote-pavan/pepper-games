@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:text="@string/navigate_to_game_overview"
+        android:text="go to main events"
         tools:layout_editor_absoluteX="125dp"
         tools:layout_editor_absoluteY="315dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

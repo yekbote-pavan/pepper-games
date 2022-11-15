@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
-
 import com.example.peppergames.databinding.FragmentFirstBinding;
 
 public class FirstFragment extends Fragment {
@@ -41,7 +40,7 @@ public class FirstFragment extends Fragment {
         binding.goNavigator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FirstFragment.this.getContext(), gameOverview.class);
+                Intent i = new Intent(FirstFragment.this.getContext(), MyEventsActivity.class);
                 startActivity(i);
             }
         });

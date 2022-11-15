@@ -33,7 +33,7 @@ public class PickPosition extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pick_position);
 
-        current_event = Database.events.get(0);
+        current_event = Database.getEvents().get(0);
         EditText text = findViewById(R.id.game_type);
         text.setText(current_event.getGame());
 

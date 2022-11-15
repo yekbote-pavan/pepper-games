@@ -5,13 +5,10 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.peppergames.databinding.ProfileBinding;
 import com.example.peppergames.dto.User;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private ProfileBinding binding;
     private User user;
 
     @SuppressLint("DefaultLocale")
