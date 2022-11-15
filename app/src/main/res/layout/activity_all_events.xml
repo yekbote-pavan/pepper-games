@@ -57,7 +57,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="630dp"
+        android:layout_height="544dp"
         android:layout_below="@id/all_events_my_events_button_layout"
         android:id="@+id/event_scroll">
         <LinearLayout
@@ -92,12 +92,9 @@
             android:text="Date"/>
 
         <ImageView
-            android:layout_width="50dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="0dp"
             android:backgroundTint="#00002229"
-            android:maxWidth="1dp"
-            android:maxHeight="1dp"
             android:scaleType="fitCenter"
             android:src="@drawable/arrow"
             android:contentDescription="sorting arrow" />
@@ -105,8 +102,8 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="77dp"
-        android:layout_height="71dp"
+        android:layout_width="98dp"
+        android:layout_height="64dp"
         android:layout_above="@id/hzlayout3"
         android:layout_alignParentRight="true"
         android:layout_marginEnd="15dp"
