@@ -119,6 +119,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="Football"
+                            android:id="@+id/game_type"
                             android:textColorHint="@color/black" />
 
                         <ImageView
@@ -145,6 +146,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="6 am, 1st Dec 2022"
+                            android:id="@+id/game_date"
                             android:layout_marginLeft="0dp"
                             android:textColorHint="@color/black" />
 
@@ -162,6 +164,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="Skills: 5"
+                            android:id="@+id/game_skill_rating"
                             android:textColorHint="@color/black" />
 
                         <ImageView
@@ -178,6 +181,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="Conduct: 5"
+                            android:id="@+id/game_conduct_rating"
                             android:textColorHint="@color/black" />
 
                         <ImageView
@@ -204,6 +208,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:hint="ARC"
+                            android:id="@+id/game_location"
                             android:textColorHint="@color/black"/>
 
 
@@ -258,46 +263,46 @@
             android:layout_alignBottom="@+id/soccer_field"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_round_person"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
-            android:id="@+id/leftMidfielder1"
+            android:id="@+id/leftWing1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/goalkeeper1"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="80dp"
-            android:src="@drawable/ic_round_person"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
             android:layout_toStartOf="@+id/centralMidfielder1"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
-            android:id="@+id/leftMidfielder2"
+            android:id="@+id/leftWing2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/goalkeeper2"
             android:layout_marginEnd="80dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_round_person"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
             android:layout_toStartOf="@+id/centralMidfielder2"
             android:background="@drawable/roundedbutton" />
 
 
         <ImageButton
-            android:id="@+id/rightMidfielder1"
+            android:id="@+id/rightWing1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/goalkeeper1"
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="60dp"
-            android:src="@drawable/ic_round_person"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
             android:layout_toEndOf="@+id/centralMidfielder1"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
-            android:id="@+id/rightMidfielder2"
+            android:id="@+id/rightWing2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/goalkeeper2"
@@ -314,7 +319,7 @@
             android:layout_below="@+id/goalkeeper1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:src="@drawable/ic_round_person"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -332,10 +337,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/centralMidfielder1"
-            android:layout_alignStart="@+id/leftMidfielder1"
+            android:layout_alignStart="@+id/leftWing1"
             android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/ic_round_person"
+            android:src="@drawable/ic_baseline_sports_soccer_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -343,7 +348,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/centralMidfielder2"
-            android:layout_alignStart="@+id/leftMidfielder2"
+            android:layout_alignStart="@+id/leftWing2"
             android:layout_marginStart="60dp"
             android:layout_marginBottom="15dp"
             android:src="@drawable/ic_baseline_sports_soccer_24"
@@ -355,7 +360,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/centralMidfielder1"
             android:src="@drawable/ic_baseline_sports_soccer_24"
-            android:layout_alignEnd="@+id/rightMidfielder1"
+            android:layout_alignEnd="@+id/rightWing1"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="60dp"
             android:background="@drawable/roundedbutton" />
@@ -365,7 +370,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/centralMidfielder2"
-            android:layout_alignEnd="@+id/rightMidfielder2"
+            android:layout_alignEnd="@+id/rightWing2"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="15dp"
             android:src="@drawable/ic_baseline_sports_soccer_24"
