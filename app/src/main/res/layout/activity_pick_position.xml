@@ -157,14 +157,15 @@
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:id="@+id/position_game_info_outer_layout">
 
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="Skills: 5"
-                            android:id="@+id/game_skill_rating"
+                            android:id="@+id/position_game_skill_rating"
                             android:textColorHint="@color/black" />
 
                         <ImageView
@@ -181,7 +182,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="Conduct: 5"
-                            android:id="@+id/game_conduct_rating"
+                            android:id="@+id/position_game_conduct_rating"
                             android:textColorHint="@color/black" />
 
                         <ImageView
@@ -208,7 +209,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:hint="ARC"
-                            android:id="@+id/game_location"
+                            android:id="@+id/position_game_location"
                             android:textColorHint="@color/black"/>
 
 
