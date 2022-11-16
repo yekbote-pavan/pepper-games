@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -210,6 +211,8 @@ public class PickPosition extends AppCompatActivity {
                 });
             }
 
+
+
 //            // the position is not taken by others
 //            if (!homeTeam.containsKey(position_title_enum) && !awayTeam.containsKey(position_title_enum)){
 ////                button_click = findViewById(position_id);
@@ -230,6 +233,21 @@ public class PickPosition extends AppCompatActivity {
 
         }
 
+        Button popup_cancel_button = (Button) pickPosition.findViewById(R.id.confirm_popup_cancel);
+        popup_cancel_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow_position_confirm.dismiss();
+            }
+        });
+
+        Button popup_back_button = (Button) otherPlayerInfo.findViewById(R.id.other_taken_back_button);
+        popup_back_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                popupWindow_other_player_info.dismiss();
+            }
+        });
 
 
 //        ImageButton gkButton = findViewById(R.id.leftStriker2);
