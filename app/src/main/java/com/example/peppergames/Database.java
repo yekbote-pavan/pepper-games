@@ -41,6 +41,10 @@ public class Database {
             "Football", 5, 4, "7am, 12th Nov 2022", 12
             , "ARC", true, positions);
 
+    private static final User appUser = new User("Pavan Yekbote", 2, 3,
+            "I'm a freshman. " + "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+            22, 22, "Football", "22/01/2202");
+
     static {
         homePositions.put(PositionEnum.GK, Avram);
         homePositions.put(PositionEnum.RST, Pratt);
@@ -82,5 +86,13 @@ public class Database {
         }
 
         return -1;
+    }
+
+    public static User getAppUser() {
+        return appUser;
+    }
+
+    public static void addEvent(Event event) {
+        events.add(event);
     }
 }
