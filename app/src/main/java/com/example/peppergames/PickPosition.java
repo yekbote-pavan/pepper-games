@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 
 import com.example.peppergames.dto.Event;
 import com.example.peppergames.dto.PositionEnum;
@@ -79,6 +80,22 @@ public class PickPosition extends AppCompatActivity {
         put("rightWing2", R.id.rightWing2);
     }};
 
+    private Map<String, String> position_title_to_question_form = new HashMap<String, String>(){{
+        put("goalkeeper1", "Goal Keeper");
+        put("goalkeeper2", "Goal Keeper");
+        put("leftStriker1", "Left Striker");
+        put("leftStriker2", "Left Striker");
+        put("rightStriker1", "Right Striker");
+        put("rightStriker2", "Right Striker");
+        put("leftWing1", "Left Wing");
+        put("leftWing2", "Left Wing");
+        put("centralMidfielder1", "Central Midfielder");
+        put("centralMidfielder2", "Central Midfielder");
+        put("rightWing1", "Right Wing");
+        put("rightWing2", "Right Wing");
+    }};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -144,18 +161,50 @@ public class PickPosition extends AppCompatActivity {
             String position_title = entry.getKey();
             int position_id = entry.getValue();
             button_click = findViewById(position_id);
-            // 逻辑错了 不应该hometeam找title_enum 因为home和away可能共用同样的enum
-            if (homeTeamTakens.contains(position_title) || awayTeamTakens.contains(position_title)) {
+            // 逻辑错了 不应该team找title_enum 因为home和away可能共用同样的enum
+            // the position is taken by the other player
+                // home team
+            if (homeTeamTakens.contains(position_title)) {
+                PositionEnum curr_pos_enum = position_dict_rev.get(position_title);
+                User curr_user = homeTeam.get(curr_pos_enum);
                 button_click.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        TextView text = otherPlayerInfo.findViewById(R.id.position_info_player_TBD);
+                        text.setText(curr_user.getName());
+                        text = otherPlayerInfo.findViewById(R.id.position_info_skills_TBD);
+                        text.setText(String.format("%d", curr_user.getSkillRating()));
+                        text = otherPlayerInfo.findViewById(R.id.position_info_conduct_TBD);
+                        text.setText(String.format("%d", curr_user.getConductRating()));
+                        text = otherPlayerInfo.findViewById(R.id.position_info_position_TBD);
+                        text.setText(position_title_to_question_form.get(position_title));
                         popupWindow_other_player_info.showAtLocation(otherPlayerInfo, Gravity.BOTTOM, 0, 0);
                     }
                 });
-            } else {
+            } else if (awayTeamTakens.contains(position_title)) {   // away team
+                PositionEnum curr_pos_enum = position_dict_rev.get(position_title);
+                User curr_user = awayTeam.get(curr_pos_enum);
                 button_click.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        TextView text = otherPlayerInfo.findViewById(R.id.position_info_player_TBD);
+                        text.setText(curr_user.getName());
+                        text = otherPlayerInfo.findViewById(R.id.position_info_skills_TBD);
+                        text.setText(String.format("%d", curr_user.getSkillRating()));
+                        text = otherPlayerInfo.findViewById(R.id.position_info_conduct_TBD);
+                        text.setText(String.format("%d", curr_user.getConductRating()));
+                        text = otherPlayerInfo.findViewById(R.id.position_info_position_TBD);
+                        text.setText(position_title_to_question_form.get(position_title));
+                        popupWindow_other_player_info.showAtLocation(otherPlayerInfo, Gravity.BOTTOM, 0, 0);
+                    }
+                });
+            } else {    // the position is not taken by others
+                button_click.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        TextView text = pickPosition.findViewById(R.id.confirm_popup_position_dynamic);
+                        String question_form = position_title_to_question_form.get(position_title);
+                        text.setText(question_form);
                         popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
                     }
                 });
