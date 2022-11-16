@@ -28,6 +28,13 @@ public class PickPosition extends AppCompatActivity {
 
     private Event current_event;
     private ImageButton current_button;
+    private static final User Trump = new User("Donald Trump", 0, 3, "I was a president. " +
+            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+            22, 22, "Football", "22/01/2202");
+
+    PositionEnum pos_selected = PositionEnum.CM;
+    TeamEnum team_selected = TeamEnum.AWAY;
+
     private Map<PositionEnum, String> position_dict = new HashMap<PositionEnum, String>(){{
         put(PositionEnum.CM, "centralMidfielder");
         put(PositionEnum.GK, "goalkeeper");
@@ -158,6 +165,7 @@ public class PickPosition extends AppCompatActivity {
         PopupWindow popupWindow_other_player_info = new PopupWindow(otherPlayerInfo, width, height, focusable);
 
         ImageButton button_click;
+
         for (Map.Entry<String, Integer> entry : position_title_to_id.entrySet()){
             String position_title = entry.getKey();
             int position_id = entry.getValue();
@@ -200,6 +208,10 @@ public class PickPosition extends AppCompatActivity {
                     }
                 });
             } else {    // the position is not taken by others
+                pos_selected = position_dict_rev.get(position_title);
+                if (position_title.endsWith("1")){
+                    team_selected = TeamEnum.HOME;
+                }
                 button_click.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -210,29 +222,9 @@ public class PickPosition extends AppCompatActivity {
                     }
                 });
             }
-
-
-
-//            // the position is not taken by others
-//            if (!homeTeam.containsKey(position_title_enum) && !awayTeam.containsKey(position_title_enum)){
-////                button_click = findViewById(position_id);
-//                button_click.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
-//                    }
-//                });
-//            } else {    // the position is taken by the other player
-//                button_click.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        popupWindow_other_player_info.showAtLocation(otherPlayerInfo, Gravity.BOTTOM, 0, 0);
-//                    }
-//                });
-//            }
-
         }
 
+        // back & cancel buttons
         Button popup_cancel_button = (Button) pickPosition.findViewById(R.id.confirm_popup_cancel);
         popup_cancel_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -249,7 +241,24 @@ public class PickPosition extends AppCompatActivity {
             }
         });
 
-
+        // YES! button
+        Button popup_position_choose_yes = (Button) pickPosition.findViewById(R.id.confirm_popup_yes);
+        popup_position_choose_yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                User user = Trump;
+                // update the team map
+                Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
+                Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);
+                previous_event_team.put(pos_selected, user);
+                previous_event_team.put(PositionEnum.LW, user);
+                // update: event.isPlaying
+                current_event.setPlaying(true);
+                // jump to MyEvents page
+                Intent intent = new Intent(PickPosition.this, MyEventsActivity.class);
+                startActivity(intent);
+            }
+        });
 //        ImageButton gkButton = findViewById(R.id.leftStriker2);
 //        gkButton.setOnClickListener(new View.OnClickListener() {
 //            @Override

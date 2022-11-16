@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Database {
+    // private -> public
     private static final User Pavan = new User("Pavan Yekbote", 0, 3, "I'm a freshman. " +
             "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
             22, 22, "Football", "22/01/2202");
