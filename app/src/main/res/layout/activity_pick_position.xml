@@ -334,7 +334,7 @@
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
-            android:id="@+id/leftStriker1"
+            android:id="@+id/rightStriker1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/centralMidfielder1"
@@ -356,7 +356,7 @@
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
-            android:id="@+id/rightStriker1"
+            android:id="@+id/leftStriker1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/centralMidfielder1"
