@@ -26,7 +26,7 @@ import java.util.Map;
 public class CreateEventActivity extends AppCompatActivity {
 
     private String date;
-    private SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+    private final SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
