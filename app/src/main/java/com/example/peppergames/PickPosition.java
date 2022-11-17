@@ -275,7 +275,6 @@ public class PickPosition extends AppCompatActivity {
                 Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
                 Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);
                 previous_event_team.put(pos_selected, user);
-                previous_event_team.put(PositionEnum.LW, user);
                 // update: event.isPlaying
                 current_event.setPlaying(true);
                 // jump to MyEvents page
