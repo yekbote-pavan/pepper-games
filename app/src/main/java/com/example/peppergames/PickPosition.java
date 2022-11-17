@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 
 public class PickPosition extends AppCompatActivity {
@@ -58,20 +59,21 @@ public class PickPosition extends AppCompatActivity {
         put("leftStriker2", PositionEnum.LST);
         put("rightStriker2", PositionEnum.RST);
     }};
-//    private List<Integer> position_id_int = new ArrayList<>(){{
-//        add(R.id.goalkeeper1);
-//        add(R.id.goalkeeper2);
-//        add(R.id.leftStriker1);
-//        add(R.id.leftStriker2);
-//        add(R.id.rightStriker1);
-//        add(R.id.rightStriker2);
-//        add(R.id.leftWing1);
-//        add(R.id.leftWing2);
-//        add(R.id.centralMidfielder1);
-//        add(R.id.centralMidfielder2);
-//        add(R.id.rightWing1);
-//        add(R.id.rightWing2);
-//    }};
+    
+    private List<String> all_position_titles = new ArrayList<String>(){{
+        add("goalkeeper1");
+        add("goalkeeper2");
+        add("leftStriker1");
+        add("leftStriker2");
+        add("rightStriker1");
+        add("rightStriker2");
+        add("leftWing1");
+        add("leftWing2");
+        add("centralMidfielder1");
+        add("centralMidfielder2");
+        add("rightWing1");
+        add("rightWing2");
+    }};
 
     private Map<String, Integer> position_title_to_id = new HashMap<String, Integer>(){{
         put("goalkeeper1", R.id.goalkeeper1);
@@ -129,24 +131,24 @@ public class PickPosition extends AppCompatActivity {
 
         // update occupied positions with a different image: ic_round_person
         Map<PositionEnum, User> homeTeam = current_event.getTeamPositions().get(TeamEnum.HOME);
-        List<String> homeTeamTakens = new ArrayList<>();
+        List<String> home_team_takens = new ArrayList<>();
         for (Map.Entry<PositionEnum, User> entry : homeTeam.entrySet()){
             PositionEnum pos = entry.getKey();
             User user = entry.getValue();
             String id_str = position_dict.get(pos) + "1";
-            homeTeamTakens.add(id_str);
+            home_team_takens.add(id_str);
             int id = getResources().getIdentifier(id_str, "id", getPackageName());
             current_button = (ImageButton) findViewById(id);
             current_button.setImageResource(R.drawable.ic_round_person);
         }
 
         Map<PositionEnum, User> awayTeam = current_event.getTeamPositions().get(TeamEnum.AWAY);
-        List<String> awayTeamTakens = new ArrayList<>();
+        List<String> away_team_takens = new ArrayList<>();
         for (Map.Entry<PositionEnum, User> entry : awayTeam.entrySet()){
             PositionEnum pos = entry.getKey();
             User user = entry.getValue();
             String id_str = position_dict.get(pos) + "2";
-            awayTeamTakens.add(id_str);
+            away_team_takens.add(id_str);
             int id = getResources().getIdentifier(id_str, "id", getPackageName());
             current_button = (ImageButton) findViewById(id);
             current_button.setImageResource(R.drawable.ic_round_person);
@@ -173,7 +175,7 @@ public class PickPosition extends AppCompatActivity {
             // 逻辑错了 不应该team找title_enum 因为home和away可能共用同样的enum
             // the position is taken by the other player
                 // home team
-            if (homeTeamTakens.contains(position_title)) {
+            if (home_team_takens.contains(position_title)) {
                 PositionEnum curr_pos_enum = position_dict_rev.get(position_title);
                 User curr_user = homeTeam.get(curr_pos_enum);
                 button_click.setOnClickListener(new View.OnClickListener() {
@@ -190,7 +192,7 @@ public class PickPosition extends AppCompatActivity {
                         popupWindow_other_player_info.showAtLocation(otherPlayerInfo, Gravity.BOTTOM, 0, 0);
                     }
                 });
-            } else if (awayTeamTakens.contains(position_title)) {   // away team
+            } else if (away_team_takens.contains(position_title)) {   // away team
                 PositionEnum curr_pos_enum = position_dict_rev.get(position_title);
                 User curr_user = awayTeam.get(curr_pos_enum);
                 button_click.setOnClickListener(new View.OnClickListener() {
@@ -224,6 +226,22 @@ public class PickPosition extends AppCompatActivity {
             }
         }
 
+        // "Surprise Me" button
+        List<String> available_position_to_surprise = new ArrayList<>(all_position_titles);
+        available_position_to_surprise.removeAll(home_team_takens);
+        available_position_to_surprise.removeAll(away_team_takens);
+        Button surprise_me_button = (Button) findViewById(R.id.surprise_me_button);
+        surprise_me_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                TextView text = pickPosition.findViewById(R.id.confirm_popup_position_dynamic);
+                Random rand = new Random();
+                String surprise_position_title =  available_position_to_surprise.get(rand.nextInt(available_position_to_surprise.size()));
+                String question_form = position_title_to_question_form.get(surprise_position_title);
+                text.setText(question_form);
+                popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
+            }
+        });
         // back & cancel buttons
         Button popup_cancel_button = (Button) pickPosition.findViewById(R.id.confirm_popup_cancel);
         popup_cancel_button.setOnClickListener(new View.OnClickListener() {
