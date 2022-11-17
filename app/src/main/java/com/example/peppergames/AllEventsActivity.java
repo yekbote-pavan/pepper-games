@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -78,6 +79,15 @@ public class AllEventsActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(AllEventsActivity.this, CreateEventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button myEventsButton = findViewById(R.id.my_events_button);
+        myEventsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AllEventsActivity.this, MyEventsActivity.class);
                 startActivity(intent);
             }
         });
