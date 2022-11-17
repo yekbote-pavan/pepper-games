@@ -77,8 +77,7 @@ public class AllEventsActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                toDo: link to smit create event
-                Intent intent = new Intent(AllEventsActivity.this, ProfileActivity.class);
+                Intent intent = new Intent(AllEventsActivity.this, CreateEventActivity.class);
                 startActivity(intent);
             }
         });

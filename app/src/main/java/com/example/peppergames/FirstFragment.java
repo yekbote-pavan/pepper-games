@@ -40,7 +40,7 @@ public class FirstFragment extends Fragment {
         binding.goNavigator.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(FirstFragment.this.getContext(), PickPosition.class);
+                Intent i = new Intent(FirstFragment.this.getContext(), CreateEventActivity.class);
                 startActivity(i);
             }
         });

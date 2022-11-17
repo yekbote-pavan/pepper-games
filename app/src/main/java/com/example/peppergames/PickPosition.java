@@ -246,7 +246,7 @@ public class PickPosition extends AppCompatActivity {
         popup_position_choose_yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User user = Trump;
+                User user = Database.getAppUser();
                 // update the team map
                 Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
                 Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);

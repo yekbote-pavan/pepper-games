@@ -9,16 +9,13 @@ import com.example.peppergames.dto.User;
 
 public class ProfileActivity extends AppCompatActivity {
 
-    private User user;
-
     @SuppressLint("DefaultLocale")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
-        user = new User("Pavan Yekbote", 2, 3, "I'm a freshman. " +
-                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-                22, 22, "Football", "22/01/2202");
+
+        User user = Database.getAppUser();
         TextView textView = findViewById(R.id.user_name);
         textView.setText(user.getName());
 
