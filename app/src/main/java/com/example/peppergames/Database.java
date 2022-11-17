@@ -50,11 +50,11 @@ public class Database {
         positions.put(TeamEnum.AWAY, awayPositions);
 
         Event amateurGame = new Event(
-                "Basketball", 2, 3, "6am, 11th Nov 2022", 12,
+                "Basketball", 2, 3, "06 AM, 11 Nov 2022", 12,
                 "ARC", false, positions);
 
         Event proGame = new Event(
-                "Football", 5, 4, "7am, 12th Nov 2022", 12
+                "Football", 5, 4, "07 AM, 12 Nov 2022", 12
                 , "ARC", true, positions);
 
         events.add(amateurGame);
