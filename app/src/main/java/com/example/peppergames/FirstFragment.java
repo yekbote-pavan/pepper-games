@@ -1,10 +1,25 @@
 package com.example.peppergames;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
+import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupMenu;
+import android.widget.PopupWindow;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,6 +29,7 @@ import com.example.peppergames.databinding.FragmentFirstBinding;
 public class FirstFragment extends Fragment {
 
     private FragmentFirstBinding binding;
+
 
     @Override
     public View onCreateView(
@@ -44,6 +60,12 @@ public class FirstFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        int get_rating = 1;
+        if(get_rating == 1){
+            // create pop up
+
+        }
     }
 
     @Override
