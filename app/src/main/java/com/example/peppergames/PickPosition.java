@@ -220,6 +220,9 @@ public class PickPosition extends AppCompatActivity {
                         TextView text = pickPosition.findViewById(R.id.confirm_popup_position_dynamic);
                         String question_form = position_title_to_question_form.get(position_title);
                         text.setText(question_form);
+                        text = pickPosition.findViewById(R.id.confirm_popup_team_dynamic);
+                        String team_name = (position_title.endsWith("1") ? "Home Team" : "Away Team");
+                        text.setText(team_name);
                         popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
                     }
                 });
@@ -239,6 +242,9 @@ public class PickPosition extends AppCompatActivity {
                 String surprise_position_title =  available_position_to_surprise.get(rand.nextInt(available_position_to_surprise.size()));
                 String question_form = position_title_to_question_form.get(surprise_position_title);
                 text.setText(question_form);
+                text = pickPosition.findViewById(R.id.confirm_popup_team_dynamic);
+                String team_name = (surprise_position_title.endsWith("1") ? "Home Team" : "Away Team");
+                text.setText(team_name);
                 popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
             }
         });
