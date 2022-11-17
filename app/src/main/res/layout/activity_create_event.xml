@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
     tools:ignore="HardcodedText">
 
     <TextView
@@ -73,8 +72,7 @@
                 android:layout_width="188dp"
                 android:layout_height="208dp"
                 android:translationY="208dp"
-                android:translationX="208dp"
-                tools:context=".MainActivity">
+                android:translationX="208dp">
 
 <!--                 Add CalendarView to display the Calendar -->
                 <CalendarView
