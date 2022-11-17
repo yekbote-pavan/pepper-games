@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.example.peppergames.dto.Event;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class AllEventsActivity extends AppCompatActivity {
 
@@ -67,6 +68,16 @@ public class AllEventsActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(AllEventsActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        FloatingActionButton fab = findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                toDo: link to smit create event
                 Intent intent = new Intent(AllEventsActivity.this, ProfileActivity.class);
                 startActivity(intent);
             }

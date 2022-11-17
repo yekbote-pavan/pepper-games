@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/position_info"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/position_info_player">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Player: "
+                    android:textSize="25dp"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/position_info_player_TBD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TBD"
+                    android:textSize="25dp"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/position_info_player"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:id="@+id/position_info_skills">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Skills: "
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+
+                <TextView
+                    android:id="@+id/position_info_skills_TBD"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TBD"
+                    android:textColor="@color/black"
+                    android:textSize="25dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/position_info_skills"
+                android:layout_marginTop="10dp"
+                android:id="@+id/position_info_conduct"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Conduct: "
+                    android:textSize="25dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TBD"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/position_info_conduct_TBD"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_below="@+id/position_info_conduct"
+                android:layout_marginTop="10dp"
+                android:id="@+id/position_info_position"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Position: "
+                    android:textSize="25dp"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TBD"
+                    android:textSize="25dp"
+                    android:textColor="@color/black"
+                    android:id="@+id/position_info_position_TBD"/>
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/other_taken_back_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/position_info"
+            android:layout_marginTop="25dp"
+            android:textSize="25dp"
+            android:layout_centerHorizontal="true"
+            android:text="Back" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
