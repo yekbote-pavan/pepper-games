@@ -237,6 +237,7 @@
         <!--            android:text="Game Card: //////TBD//////"-->
         <!--            android:textSize="30dp" />-->
 
+
         <ImageView
             android:id="@+id/soccer_field"
             android:layout_width="match_parent"
@@ -246,6 +247,33 @@
             android:layout_marginBottom="60dp"
             android:scaleType="centerCrop"
             android:src="@drawable/soccer_field" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/soccer_field"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="0dp"
+            android:background="@drawable/back"
+            android:text="Home"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/soccer_field"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/back"
+            android:text="Away"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
 
         <ImageButton
             android:id="@+id/goalkeeper1"
@@ -385,6 +413,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/surprise_me_button"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
                 android:text="Surprise Me"

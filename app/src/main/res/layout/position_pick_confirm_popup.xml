@@ -24,10 +24,22 @@
             android:textSize="30dp" />
 
         <TextView
+            android:id="@+id/confirm_popup_team_dynamic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/confirm_popup_question"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/back"
+            android:text="Team TBD"
+            android:textColor="@color/black"
+            android:textSize="25dp"/>
+
+        <TextView
             android:id="@+id/confirm_popup_position_dynamic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/confirm_popup_question"
+            android:layout_below="@+id/confirm_popup_team_dynamic"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/back"
