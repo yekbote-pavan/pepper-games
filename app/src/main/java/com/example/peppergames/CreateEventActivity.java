@@ -43,7 +43,7 @@ public class CreateEventActivity extends AppCompatActivity {
 
         Spinner venueSpinner = findViewById(R.id.venue_spinner);
         String[] venueArray = new String[] {
-                "ARC", "CRCE, Flag"
+                "ARC", "CRCE", "Flag"
         };
         ArrayAdapter<String> venueAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, venueArray);
@@ -74,7 +74,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 SimpleDateFormat dateFormat = new SimpleDateFormat("hh a");
 
                 if (date == null) {
-                    date = sdf.format(new Date(calendar.getDate()));
+                    date = sdf.format(new Date());
                 }
 
                 Map<TeamEnum, Map<PositionEnum, User>> positions = new HashMap<>();
@@ -86,7 +86,7 @@ public class CreateEventActivity extends AppCompatActivity {
                         String.format("%s, %s", dateFormat.format(new Time(hour, min, 0)), date),
                         1, venue, true, positions);
                 Database.addEvent(event);
-                Intent intent = new Intent(CreateEventActivity.this, MyEventsActivity.class);
+                Intent intent = new Intent(CreateEventActivity.this, PickPosition.class);
                 intent.putExtra("event_index", Database.getEvents().size() - 1);
                 startActivity(intent);
             }

@@ -11,42 +11,34 @@ import java.util.List;
 import java.util.Map;
 
 public class Database {
-    // private -> public
-    private static final User Pavan = new User("Pavan Yekbote", 0, 3, "I'm a freshman. " +
-            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2202");
-    private static final User Avram = new User("Avram", 5, 2, "I'm a freshman. " +
-            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2202");
-    private static final User Pratt = new User("Pratt", 2, 1, "I'm a freshman. " +
-            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2202");
-    private static final User Nora = new User("Nora", 2, 4, "I'm a freshman. " +
-            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2202");
-    private static final User Smith = new User("Smith", 4, 3, "I'm a freshman. " +
-            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2202");
-
-    private static final Map<PositionEnum, User> homePositions = new HashMap<>();
-    private static final Map<PositionEnum, User> awayPositions = new HashMap<>();
-
-    private static final Map<TeamEnum, Map<PositionEnum, User>> positions = new HashMap<>();
 
     private static final List<Event> events = new ArrayList<>();
-    private static final Event amateurGame = new Event(
-            "Basketball", 2, 3, "6am, 11th Nov 2022", 12,
-            "ARC", false, positions);
-
-    private static final Event proGame = new Event(
-            "Football", 5, 4, "7am, 12th Nov 2022", 12
-            , "ARC", true, positions);
 
     private static final User appUser = new User("Pavan Yekbote", 2, 3,
             "I'm a freshman. " + "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
             22, 22, "Football", "22/01/2202");
 
     static {
+        Map<PositionEnum, User> homePositions = new HashMap<>();
+        Map<PositionEnum, User> awayPositions = new HashMap<>();
+        Map<TeamEnum, Map<PositionEnum, User>> positions = new HashMap<>();
+
+        User Pavan = new User("Pavan Yekbote", 0, 3, "I'm a freshman. " +
+                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+                22, 22, "Football", "22/01/2202");
+        User Avram = new User("Avram", 5, 2, "I'm a freshman. " +
+                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+                22, 22, "Football", "22/01/2202");
+        User Pratt = new User("Pratt", 2, 1, "I'm a freshman. " +
+                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+                22, 22, "Football", "22/01/2202");
+        User Nora = new User("Nora", 2, 4, "I'm a freshman. " +
+                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+                22, 22, "Football", "22/01/2202");
+        User Smith = new User("Smith", 4, 3, "I'm a freshman. " +
+                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+                22, 22, "Football", "22/01/2202");
+
         homePositions.put(PositionEnum.GK, Avram);
         homePositions.put(PositionEnum.RST, Pratt);
         homePositions.put(PositionEnum.CM, Nora);
@@ -57,16 +49,20 @@ public class Database {
         positions.put(TeamEnum.HOME, homePositions);
         positions.put(TeamEnum.AWAY, awayPositions);
 
+        Event amateurGame = new Event(
+                "Basketball", 2, 3, "6am, 11th Nov 2022", 12,
+                "ARC", false, positions);
+
+        Event proGame = new Event(
+                "Football", 5, 4, "7am, 12th Nov 2022", 12
+                , "ARC", true, positions);
+
         events.add(amateurGame);
         events.add(proGame);
     }
 
     public static List<Event> getEvents() {
         return events;
-    }
-
-    public static Map<TeamEnum, Map<PositionEnum, User>> getPositions() {
-        return positions;
     }
 
     public static int getCurrentPlayers(int eventIndex) {
