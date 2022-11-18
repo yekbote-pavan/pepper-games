@@ -1,11 +1,11 @@
-<androidx.cardview.widget.CardView
+<androidx.cardview.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
     android:clickable="true"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="20dp"
-    android:layout_marginTop="20dp"
-    android:layout_marginRight="20dp"
-    android:layout_marginBottom="20dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
     android:id="@+id/rating_card"
     android:focusable="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,96 +13,89 @@
     tools:ignore="HardcodedText, ContentDescription">
 
 
-<RelativeLayout
+    <RelativeLayout
 
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/GO_card_1"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/square_border"
-    android:padding="4dp">
-
-    <ImageView
-        android:id="@+id/player_profile_image_0"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        tools:srcCompat="@tools:sample/avatars"
-        android:adjustViewBounds="true"
-        android:padding="4dp"/>
-    <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/GO_card_1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="GK"
-        android:layout_below="@id/player_profile_image_0"
-        android:layout_marginLeft="20dp"/>
+        android:background="@drawable/square_border"
+        android:padding="4dp">
 
-    <LinearLayout
-        android:id="@+id/player_name_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_toRightOf="@id/player_profile_image_0"
-        android:paddingLeft="134dp"
-        android:paddingRight="134dp">
-    <TextView
-
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pratt"
-        android:textSize="24sp"
-        android:id="@+id/rating_name"
-
-        />
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/skill_tag_0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/player_name_0"
-        android:layout_toRightOf="@id/player_profile_image_0">
-
+        <ImageView
+            android:id="@+id/player_profile_image_0"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            tools:srcCompat="@tools:sample/avatars"
+            android:adjustViewBounds="true"
+            android:padding="2dp"/>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_below="@id/player_name_0"
-            android:layout_toRightOf="@id/player_profile_image_0"
-            android:text="Skills:"
-            android:gravity="center"
-            android:textSize="22sp" />
-        <RatingBar
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="3.5"
-            android:id="@+id/rating_skills"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/skill_tag_0"
-        android:layout_toRightOf="@id/player_profile_image_0">
-
+            android:text="GK"
+            android:textSize="24dp"
+            android:layout_below="@id/player_profile_image_0"
+            android:layout_marginLeft="20dp"/>
         <TextView
-            android:id="@+id/conduct_tag_0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Conduct:"
-            android:textSize="22sp"
-            android:layout_gravity="center"
-            android:layout_toRightOf="@id/player_profile_image_0"
-            android:layout_below="@id/skill_tag_0" />
-        <RatingBar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="3.5"
-            android:id="@+id/rating_conduct"/>
-    </LinearLayout>
 
-</RelativeLayout>
+            android:id="@+id/rating_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pratt"
+            android:paddingHorizontal="4dp"
+            android:textSize="24sp"
+            android:layout_toRightOf="@id/player_profile_image_0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rating_name"
+            android:layout_toRightOf="@id/player_profile_image_0"
+            android:id="@+id/skills_layout">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_toRightOf="@id/player_profile_image_0"
+                android:text="Skills"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:paddingHorizontal="4dp"
+                android:id="@+id/skills_name"/>
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3.5"
+                android:id="@+id/rating_skills"
+                android:layout_toRightOf="@id/rating_name"
+                android:scaleX="0.7"
+                android:scaleY="0.7" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/skills_layout"
+            android:layout_toRightOf="@id/player_profile_image_0">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_below="@id/skills_name"
+                android:layout_toRightOf="@id/player_profile_image_0"
+                android:text="Cond."
+                android:gravity="center"
+                android:textSize="24sp"
+                android:paddingHorizontal="4dp"
+                android:id="@+id/conduct_name"/>
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:numStars="5"
+                android:rating="3.5"
+                android:id="@+id/rating_conduct"
+                android:layout_toRightOf="@id/rating_name"
+                android:layout_below="@id/rating_name"
+                android:scaleX="0.7"
+                android:scaleY="0.7"/>
+        </LinearLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>

@@ -26,6 +26,10 @@ public class AllEventsActivity extends AppCompatActivity {
         layout.removeAllViews();
 
         CardView cardView;
+        if(Database.isShowRating()){
+            Intent intent = new Intent(AllEventsActivity.this, RatingPopUp.class);
+            startActivity(intent);
+        }
 //        toDo: generate events based on sorted value
         for (Event event : Database.getEvents()) {
             if (event.isPlaying()) {
