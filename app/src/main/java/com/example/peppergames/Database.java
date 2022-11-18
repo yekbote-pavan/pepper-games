@@ -50,6 +50,9 @@ public class Database {
                 "Football", 1, 1, "11 AM, 19 Nov", 12,
                 "ARC", false, positions);
 
+
+        awayPositions.put(PositionEnum.GK, getAppUser());
+        positions.put(TeamEnum.AWAY, awayPositions);
         Event proGame = new Event(
                 "Football", 5, 4, "07 PM, 19 Nov", 12
                 , "ARC", true, positions);
