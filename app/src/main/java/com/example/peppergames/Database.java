@@ -51,11 +51,21 @@ public class Database {
                 "ARC", false, positions);
 
 
-        awayPositions.put(PositionEnum.GK, getAppUser());
-        positions.put(TeamEnum.AWAY, awayPositions);
+        Map<PositionEnum, User> homePositions2 = new HashMap<>();
+        homePositions2.put(PositionEnum.GK, Avram);
+        homePositions2.put(PositionEnum.RST, Pratt);
+        homePositions2.put(PositionEnum.CM, Nora);
+
+        Map<PositionEnum, User> awayPositions2 = new HashMap<>();
+        awayPositions2.put(PositionEnum.CM, Smith);
+        awayPositions2.put(PositionEnum.GK, getAppUser());
+
+        Map<TeamEnum, Map<PositionEnum, User>> positions2 = new HashMap<>();
+        positions2.put(TeamEnum.HOME, homePositions2);
+        positions2.put(TeamEnum.AWAY, awayPositions2);
         Event proGame = new Event(
                 "Football", 5, 4, "07 PM, 19 Nov", 12
-                , "ARC", true, positions);
+                , "ARC", true, positions2);
 
         events.add(amateurGame);
         events.add(proGame);
