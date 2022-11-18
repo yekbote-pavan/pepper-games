@@ -81,10 +81,13 @@ public class Database {
                 return i;
             }
         }
-
         return -1;
     }
-
+    public static Map<PositionEnum, User> getHomeTeam(int eventIndex){
+        Event event = getEvents().get(eventIndex);
+        Map<PositionEnum, User> positionsMap = event.getTeamPositions().get(TeamEnum.HOME);
+        return positionsMap;
+    }
     public static User getAppUser() {
         return appUser;
     }

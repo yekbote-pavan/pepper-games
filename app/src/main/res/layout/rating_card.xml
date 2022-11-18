@@ -1,4 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:clickable="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="20dp"
+    android:id="@+id/rating_card"
+    android:focusable="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText, ContentDescription">
+
 
 <RelativeLayout
 
@@ -39,6 +52,7 @@
         android:layout_height="wrap_content"
         android:text="Pratt"
         android:textSize="24sp"
+        android:id="@+id/rating_name"
 
         />
     </LinearLayout>
@@ -62,7 +76,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
-            android:rating="3.5"/>
+            android:rating="3.5"
+            android:id="@+id/rating_skills"/>
     </LinearLayout>
 
     <LinearLayout
@@ -85,12 +100,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
-            android:rating="3.5"/>
+            android:rating="3.5"
+            android:id="@+id/rating_conduct"/>
     </LinearLayout>
 
-
-
-
-
-
 </RelativeLayout>
+</androidx.cardview.widget.CardView>
