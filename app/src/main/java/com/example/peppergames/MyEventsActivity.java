@@ -71,6 +71,7 @@ public class MyEventsActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MyEventsActivity.this, ProfileActivity.class);
                 startActivity(intent);
+                Database.setRatingToFalse();
             }
         });
 

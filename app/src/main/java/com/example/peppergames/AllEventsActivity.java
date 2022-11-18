@@ -29,6 +29,7 @@ public class AllEventsActivity extends AppCompatActivity {
         if(Database.isShowRating()){
             Intent intent = new Intent(AllEventsActivity.this, RatingPopUp.class);
             startActivity(intent);
+            Database.setRatingToFalse();
         }
 //        toDo: generate events based on sorted value
         for (Event event : Database.getEvents()) {

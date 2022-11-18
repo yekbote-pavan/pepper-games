@@ -18,7 +18,7 @@ public class Database {
             "I'm a freshman. " + "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
             22, 22, "Football", "22/01/2012");
 
-    private static final boolean showRating = true;
+    private static boolean showRating = true;
 
     static {
         Map<PositionEnum, User> homePositions = new HashMap<>();
@@ -110,5 +110,8 @@ public class Database {
 
     public static boolean isShowRating() {
         return showRating;
+    }
+    public static void setRatingToFalse() {
+        showRating = false;
     }
 }
