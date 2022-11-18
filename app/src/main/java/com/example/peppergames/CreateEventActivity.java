@@ -36,6 +36,12 @@ public class CreateEventActivity extends AppCompatActivity {
         String[] sportArray = new String[] {
                 "Football", "Basketball"
         };
+
+        if(Database.isShowRating()){
+            Intent intent = new Intent(CreateEventActivity.this, RatingPopUp.class);
+            startActivity(intent);
+        }
+
         ArrayAdapter<String> sportAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, sportArray);
         sportAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
