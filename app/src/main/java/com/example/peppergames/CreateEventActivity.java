@@ -26,7 +26,7 @@ import java.util.Map;
 public class CreateEventActivity extends AppCompatActivity {
 
     private String date;
-    private final SimpleDateFormat sdf = new SimpleDateFormat("dd MMM yyyy");
+    private final SimpleDateFormat sdf = new SimpleDateFormat("dd MMM");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +84,7 @@ public class CreateEventActivity extends AppCompatActivity {
                 Event event = new Event(sport, Math.round(skillsRating.getRating()),
                         Math.round(conductRating.getRating()),
                         String.format("%s, %s", dateFormat.format(new Time(hour, min, 0)), date),
-                        1, venue, true, positions);
+                        12, venue, true, positions);
                 Database.addEvent(event);
                 Intent intent = new Intent(CreateEventActivity.this, PickPosition.class);
                 intent.putExtra("event_index", Database.getEvents().size() - 1);
