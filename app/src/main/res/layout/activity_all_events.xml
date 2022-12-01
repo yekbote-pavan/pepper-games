@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginStart="164dp"
+            android:layout_marginStart="144dp"
             android:text="Events"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColorHint="@color/black"
@@ -27,14 +27,14 @@
             tools:ignore="InefficientWeight" />
 
         <ImageButton
-            android:id="@+id/event_user_profile_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/my_event_user_profile_button"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="80dp"
-            android:background="@drawable/user_profile_icon"
+            android:background="@drawable/profile_image_2"
             android:clickable="true"
             android:focusable="true"
-            android:maxHeight="44dp"
+            android:maxHeight="58dp"
             android:scaleType="fitCenter" />
     </LinearLayout>
 
@@ -48,7 +48,9 @@
         <Button
             android:id="@+id/all_events_button"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="204dp"
+            android:layout_width="200dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#4D4CAF50"
             android:text="ALL EVENTS"
@@ -58,8 +60,10 @@
         <Button
             android:id="@+id/my_events_button"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="204dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
             android:text="MY EVENTS"
             android:textColor="#000000"
             android:textStyle="bold" />
