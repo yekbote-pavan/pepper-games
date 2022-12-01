@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/all_events_mega_layout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="58dp"
         android:orientation="horizontal">
 
         <TextView
@@ -84,24 +84,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/event_scroll"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/filter_button"
+            android:rotationX="-4"
+            android:text="Sports"
+            android:visibility="visible"
             android:backgroundTint="#4CAF50"
-            android:text="All Sports"
-            android:textStyle="bold" />
-
+            tools:visibility="visible"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginStart="162dp"
             android:backgroundTint="#4CAF50"
-            android:text="Date"
-            android:textStyle="bold" />
+            android:text="Date"/>
 
         <ImageView
             android:layout_width="wrap_content"

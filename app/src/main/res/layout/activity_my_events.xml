@@ -11,7 +11,7 @@
     <LinearLayout
         android:id="@+id/my_events_mega_layout"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="58dp"
         android:orientation="horizontal">
 
         <TextView
@@ -48,18 +48,20 @@
         <Button
             android:id="@+id/all_events_button"
             style="?android:attr/buttonBarButtonStyle"
-            android:layout_width="204dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="ALL EVENTS"
             android:textColor="#000000"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/my_events_counter"
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="204dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#4D4CAF50"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:id="@+id/my_events_counter"
             android:text="MY EVENTS"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
@@ -83,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/my_event_scroll"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
 
         <Button
@@ -92,15 +94,16 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#4CAF50"
             android:rotationX="-4"
-            android:text="All Sports"
             android:textStyle="bold"
+            android:text="Sports"
+            android:id="@+id/my_events_filter_button"
             android:visibility="visible"
             tools:visibility="visible" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginStart="162dp"
             android:backgroundTint="#4CAF50"
             android:text="Date"
             android:textStyle="bold" />
