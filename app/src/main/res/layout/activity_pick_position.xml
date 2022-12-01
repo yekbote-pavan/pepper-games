@@ -281,8 +281,8 @@
             android:layout_alignTop="@+id/soccer_field"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="5dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
-            android:background="@drawable/roundedbutton" />
+            android:src="@drawable/ic_baseline_add_circle_24"
+            android:background="@drawable/taken_background" />
 
         <ImageButton
             android:id="@+id/goalkeeper2"
@@ -291,7 +291,7 @@
             android:layout_alignBottom="@+id/soccer_field"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -301,7 +301,7 @@
             android:layout_below="@+id/goalkeeper1"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="80dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:layout_toStartOf="@+id/centralMidfielder1"
             android:background="@drawable/roundedbutton" />
 
@@ -312,7 +312,7 @@
             android:layout_above="@+id/goalkeeper2"
             android:layout_marginEnd="80dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:layout_toStartOf="@+id/centralMidfielder2"
             android:background="@drawable/roundedbutton" />
 
@@ -325,7 +325,7 @@
             android:layout_marginStart="80dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="60dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:layout_toEndOf="@+id/centralMidfielder1"
             android:background="@drawable/roundedbutton" />
 
@@ -336,7 +336,7 @@
             android:layout_above="@+id/goalkeeper2"
             android:layout_marginStart="80dp"
             android:layout_marginBottom="20dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:layout_toEndOf="@+id/centralMidfielder2"
             android:background="@drawable/roundedbutton" />
 
@@ -347,7 +347,7 @@
             android:layout_below="@+id/goalkeeper1"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -357,7 +357,7 @@
             android:layout_above="@+id/goalkeeper2"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="30dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -368,7 +368,7 @@
             android:layout_alignStart="@+id/rightWing1"
             android:layout_marginStart="60dp"
             android:layout_marginTop="15dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -379,7 +379,7 @@
             android:layout_alignStart="@+id/leftWing2"
             android:layout_marginStart="60dp"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:background="@drawable/roundedbutton" />
 
         <ImageButton
@@ -387,7 +387,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/centralMidfielder1"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:layout_alignEnd="@+id/leftWing1"
             android:layout_marginTop="15dp"
             android:layout_marginEnd="60dp"
@@ -401,7 +401,7 @@
             android:layout_alignEnd="@+id/rightWing2"
             android:layout_marginEnd="60dp"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/ic_baseline_sports_soccer_24"
+            android:src="@drawable/ic_baseline_add_circle_24"
             android:background="@drawable/roundedbutton" />
 
         <RelativeLayout

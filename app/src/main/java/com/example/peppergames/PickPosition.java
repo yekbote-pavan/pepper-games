@@ -144,6 +144,7 @@ public class PickPosition extends AppCompatActivity {
             String current_player_profile_image_link = user.getProfileImage();
             int current_player_profile_image = getResId(current_player_profile_image_link, R.drawable.class);;
             current_button.setImageResource(current_player_profile_image);
+            current_button.setBackgroundResource(R.drawable.taken_background);
 //            current_button.setImageResource(R.drawable.ic_round_person);
         }
 
@@ -159,6 +160,7 @@ public class PickPosition extends AppCompatActivity {
             String current_player_profile_image_link = user.getProfileImage();
             int current_player_profile_image = getResId(current_player_profile_image_link, R.drawable.class);;
             current_button.setImageResource(current_player_profile_image);
+            current_button.setBackgroundResource(R.drawable.taken_background);
 //            current_button.setImageResource(R.drawable.ic_round_person);
         }
 
