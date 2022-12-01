@@ -75,11 +75,11 @@ public class GameOverview extends AppCompatActivity {
                 int cur_skill = teamPosition.getValue().getSkillRating();
                 GO_Player player_prof = new GO_Player(cur_name, cur_conduct, cur_skill);
 
-                String image = teamPosition.getValue().getProfileImage();
-                ImageView player_profile = findViewById(R.id.player_profile_image_0);
-//                String current_player_profile_image_link = user.getProfileImage();
-                int current_player_profile_image = getResId(image, R.drawable.class);
-                player_profile.setImageResource(current_player_profile_image);
+//                String image = teamPosition.getValue().getProfileImage();
+//                ImageView player_profile = findViewById(R.id.player_profile_image_0);
+////                String current_player_profile_image_link = user.getProfileImage();
+//                int current_player_profile_image = getResId(image, R.drawable.class);
+//                player_profile.setImageResource(current_player_profile_image);
 
                 mn.add(player_prof);
             }
@@ -90,15 +90,15 @@ public class GameOverview extends AppCompatActivity {
         rv.setAdapter(adapter);
     }
 
-    private static int getResId(String resName, Class<?> c) {
-
-        try {
-            Field idField = c.getDeclaredField(resName);
-            return idField.getInt(idField);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
-    }
+//    private static int getResId(String resName, Class<?> c) {
+//
+//        try {
+//            Field idField = c.getDeclaredField(resName);
+//            return idField.getInt(idField);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            return -1;
+//        }
+//    }
 
 }

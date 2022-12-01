@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.peppergames.dto.Event;
 import com.example.peppergames.dto.PositionEnum;
@@ -265,6 +266,7 @@ public class PickPosition extends AppCompatActivity {
                                 previous_event_team.put(pos_selected, user);
                                 // update: event.isPlaying
                                 current_event.setPlaying(true);
+                                Toast.makeText(getApplicationContext(), "Join Successfully!", Toast.LENGTH_SHORT).show();
                                 // jump to MyEvents page
                                 Intent intent = new Intent(PickPosition.this, MyEventsActivity.class);
                                 startActivity(intent);
@@ -292,8 +294,29 @@ public class PickPosition extends AppCompatActivity {
                 String team_name = (surprise_position_title.endsWith("1") ? "Home Team" : "Away Team");
                 text.setText(team_name);
                 popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
+                // YES! button
+                Button popup_position_choose_yes = (Button) pickPosition.findViewById(R.id.confirm_popup_yes);
+                popup_position_choose_yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        User user = Database.getAppUser();
+                        // update the team map
+                        Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
+                        Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);
+//                                Log.println(Log.WARN, "pos_3: ", pos_selected.name());
+//                                Log.println(Log.WARN, "team_3: ", team_selected.name());
+                        previous_event_team.put(pos_selected, user);
+                        // update: event.isPlaying
+                        current_event.setPlaying(true);
+                        Toast.makeText(getApplicationContext(), "Join Successfully!", Toast.LENGTH_SHORT).show();
+                        // jump to MyEvents page
+                        Intent intent = new Intent(PickPosition.this, MyEventsActivity.class);
+                        startActivity(intent);
+                    }
+                });
             }
         });
+
         // back & cancel buttons
         Button popup_cancel_button = (Button) pickPosition.findViewById(R.id.confirm_popup_cancel);
         popup_cancel_button.setOnClickListener(new View.OnClickListener() {
