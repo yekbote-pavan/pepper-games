@@ -35,7 +35,7 @@ public class Database {
                 45, 37, "Football", "03/05/2011", "profile_image_3");
         User Nora = new User("Nora", 2, 5, "hiii",
                 5, 0, "Football", "22/01/2202", "profile_image_5");
-        User Smith = new User("Smith", 4, 3, "In football, everything is complicated by the presence of the opposite team.",
+        User Smith = new User("Smit", 4, 3, "In football, everything is complicated by the presence of the opposite team.",
                 52, 9, "Football", "22/01/2202", "profile_image_4");
 
         homePositions.put(PositionEnum.GK, Avram);

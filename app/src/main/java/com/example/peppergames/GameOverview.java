@@ -6,16 +6,15 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
-
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.peppergames.dto.PositionEnum;
 import com.example.peppergames.dto.TeamEnum;
@@ -54,14 +53,34 @@ public class GameOverview extends AppCompatActivity {
         textView.setText(String.format("%d/%d", cur_players, Database.getEvents().get(game_idx).getMaxPlayers()));
 
         Button joinButton = findViewById(R.id.game_overview_join_button);
-        joinButton.setOnClickListener(new View.OnClickListener() {
+        if (Database.getAppUser().getSkillRating() < Database.getEvents().get(game_idx).getSkillRating()
+                || Database.getAppUser().getConductRating() < Database.getEvents().get(game_idx).getConductRating()) {
+            joinButton.setClickable(false);
+            joinButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getApplicationContext(), "Rating Too Low", Toast.LENGTH_SHORT).show();
+                }
+            });
+        } else {
+            joinButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(GameOverview.this, PickPosition.class);
+                    intent.putExtra("event_index", game_idx);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        ImageButton shareButton = findViewById(R.id.game_overview_share_button);
+        shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(GameOverview.this, PickPosition.class);
-                intent.putExtra("event_index", game_idx);
-                startActivity(intent);
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Link copied to Clipboard", Toast.LENGTH_SHORT).show();
             }
         });
+
         // Dynamic scroll view
         RecyclerView rv = findViewById(R.id.game_overview);
         StaggeredGridLayoutManager gs = new StaggeredGridLayoutManager(1, StaggeredGridLayoutManager.VERTICAL);
