@@ -169,10 +169,10 @@
 
                         <ImageView
                             android:layout_height="39dp"
-                            android:src="@drawable/star"
+                            android:src="@drawable/star_symbol_icon"
                             android:layout_marginLeft = "0dp"
                             android:maxWidth="1dp"
-                            android:layout_width="50dp"
+                            android:layout_width="25dp"
                             android:maxHeight="1dp"
                             android:scaleType="fitCenter"></ImageView>
 
@@ -186,10 +186,10 @@
 
                         <ImageView
                             android:layout_height="39dp"
-                            android:src="@drawable/star"
+                            android:src="@drawable/star_symbol_icon"
                             android:layout_marginLeft = "0dp"
                             android:maxWidth="1dp"
-                            android:layout_width="50dp"
+                            android:layout_width="25dp"
                             android:maxHeight="1dp"
                             android:scaleType="fitCenter"></ImageView>
 

@@ -60,13 +60,15 @@
                 android:textSize="24sp"
                 android:paddingHorizontal="4dp"
                 android:id="@+id/skills_name"/>
+
             <RatingBar
+                android:id="@+id/rating_skills"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="3.5"
-                android:id="@+id/rating_skills"
                 android:layout_toRightOf="@id/rating_name"
+                android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:rating="3.5"
                 android:scaleX="0.7"
                 android:scaleY="0.7" />
         </LinearLayout>
@@ -86,16 +88,18 @@
                 android:textSize="24sp"
                 android:paddingHorizontal="4dp"
                 android:id="@+id/conduct_name"/>
+
             <RatingBar
+                android:id="@+id/rating_conduct"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:numStars="5"
-                android:rating="3.5"
-                android:id="@+id/rating_conduct"
-                android:layout_toRightOf="@id/rating_name"
                 android:layout_below="@id/rating_name"
+                android:layout_toRightOf="@id/rating_name"
+                android:numStars="5"
+                android:progressTint="#FFEB3B"
+                android:rating="3.5"
                 android:scaleX="0.7"
-                android:scaleY="0.7"/>
+                android:scaleY="0.7" />
         </LinearLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

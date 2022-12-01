@@ -49,9 +49,9 @@
         android:layout_below="@id/player_name_0"
         />
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:layout_width="25dp"
+        android:layout_height="28dp"
+        android:src="@drawable/star_symbol_icon"
         android:layout_below="@id/player_name_0"
         android:layout_toRightOf="@id/player_skills_0"/>
     <!--                        conduct-->
@@ -77,9 +77,9 @@
         android:layout_below="@id/player_skills_0"
         />
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@android:drawable/btn_star_big_on"
+        android:layout_width="25dp"
+        android:layout_height="28dp"
+        android:src="@drawable/star_symbol_icon"
         android:layout_below="@id/player_skills_0"
         android:layout_toRightOf="@id/player_conduct_0"/>
 

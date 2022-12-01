@@ -49,9 +49,9 @@
                 android:id="@+id/event_skill"
                 android:textColor="@color/black" />
             <ImageView
-                android:layout_height="match_parent"
-                android:src="@drawable/star"
-                android:layout_width="38dp"
+                android:layout_height="28dp"
+                android:src="@drawable/star_symbol_icon"
+                android:layout_width="25dp"
                 android:scaleType="fitCenter"
                 android:contentDescription="Rating star" />
         </LinearLayout>
@@ -70,9 +70,9 @@
                 android:id="@+id/event_conduct"
                 android:textColor="@color/black" />
             <ImageView
-                android:layout_height="match_parent"
-                android:src="@drawable/star"
-                android:layout_width="38dp"
+                android:layout_height="28dp"
+                android:src="@drawable/star_symbol_icon"
+                android:layout_width="25dp"
                 android:scaleType="fitCenter"
                 android:contentDescription="Rating star" />
         </LinearLayout>
