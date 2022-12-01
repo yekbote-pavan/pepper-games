@@ -21,19 +21,21 @@
             android:layout_centerHorizontal="true"
             android:text="Pick this position?"
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/confirm_popup_team_dynamic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
             android:layout_below="@+id/confirm_popup_question"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:background="@drawable/back"
             android:text="Team TBD"
             android:textColor="@color/black"
-            android:textSize="25dp"/>
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/confirm_popup_position_dynamic"
@@ -45,7 +47,8 @@
             android:background="@drawable/back"
             android:text="Goal Keeper"
             android:textColor="@color/black"
-            android:textSize="25dp" />
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -60,17 +63,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Yes!"
+                android:textAllCaps="true"
                 android:textSize="25dp"
-                android:textAllCaps="true" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/confirm_popup_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
-                android:textSize="25dp"
                 android:layout_toEndOf="@+id/confirm_popup_yes"
-                android:text="Cancel" />
+                android:text="Cancel"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
 
         </RelativeLayout>

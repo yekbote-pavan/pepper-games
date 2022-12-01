@@ -59,6 +59,23 @@
             android:translationX="208dp"
             android:background="#750328fc"
             android:spinnerMode="dropdown"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RatingBar
+                android:id="@+id/skills_rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:rating="3"
+                android:progressTint="#FFEB3B"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:translationX="180dp"
+                android:translationY="520dp" />
+        </RelativeLayout>
     </RelativeLayout>
 
     <TextView
@@ -92,7 +109,7 @@
         android:textAlignment="center"/>
     <RelativeLayout
         android:id="@+id/idRLContainer"
-        android:layout_width="196dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="vertical"
         android:translationX="208dp"
@@ -102,6 +119,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:timePickerMode="spinner"
+            android:layout_marginLeft="-20dp"
+            android:scaleX="0.8"
             android:id="@+id/time_picker"/>
     </RelativeLayout>
 
@@ -136,23 +155,6 @@
         android:textAlignment="center"
         android:text="Min. Conduct Rating :"
         android:textSize="22sp"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RatingBar
-            android:id="@+id/skills_rating_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:progressTint="#FFEB3B"
-            android:rating="3"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
-            android:translationX="180dp"
-            android:translationY="520dp" />
-    </RelativeLayout>
 
 
     <Button

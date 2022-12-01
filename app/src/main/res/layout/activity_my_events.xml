@@ -29,7 +29,7 @@
             android:id="@+id/my_event_user_profile_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="104dp"
+            android:layout_marginStart="80dp"
             android:background="@drawable/user_profile_icon"
             android:clickable="true"
             android:focusable="true"
@@ -45,19 +45,21 @@
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/all_events_button"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="204dp"
             android:layout_height="wrap_content"
-            android:id="@+id/all_events_button"
             android:text="ALL EVENTS"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:textStyle="bold" />
 
         <Button
+            android:id="@+id/my_events_counter"
+            style="?android:attr/buttonBarButtonStyle"
             android:layout_width="204dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33002229"
-            android:id="@+id/my_events_counter"
             android:text="MY EVENTS"
-            style="?android:attr/buttonBarButtonStyle" />
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ScrollView
@@ -87,14 +89,16 @@
             android:layout_height="wrap_content"
             android:rotationX="-4"
             android:text="All Sports"
+            android:textStyle="bold"
             android:visibility="visible"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
-            android:text="Date"/>
+            android:text="Date"
+            android:textStyle="bold" />
 
         <ImageView
             android:layout_width="wrap_content"

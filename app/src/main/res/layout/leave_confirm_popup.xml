@@ -20,7 +20,8 @@
             android:layout_centerHorizontal="true"
             android:text="Are you sure?"
             android:textColor="@color/black"
-            android:textSize="28dp" />
+            android:textSize="28dp"
+            android:textStyle="bold" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -34,17 +35,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Confirm"
+                android:textAllCaps="true"
                 android:textSize="20sp"
-                android:textAllCaps="true" />
+                android:textStyle="bold" />
 
             <Button
                 android:id="@+id/leave_confirm_popup_cancel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="42dp"
-                android:textSize="20sp"
                 android:layout_toEndOf="@+id/leave_confirm_popup_yes"
-                android:text="Cancel" />
+                android:text="Cancel"
+                android:textSize="20sp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

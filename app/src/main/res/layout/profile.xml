@@ -7,15 +7,16 @@
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     android:orientation="vertical">
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="PROFILE"
-        android:layout_gravity="center"
-        android:textSize="32sp">
-    </TextView>
+        android:textSize="32sp"
+        android:textStyle="bold"></TextView>
 
     <View
         android:layout_width="match_parent"
@@ -44,13 +45,14 @@
             </ImageView>
 
             <TextView
+                android:id="@+id/user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/user_name"
-                android:text="PAVAN YEKBOTE"
                 android:paddingLeft="4dp"
                 android:paddingRight="4dp"
-                android:textSize="22sp" />
+                android:text="PAVAN YEKBOTE"
+                android:textSize="22sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -63,12 +65,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
                 <TextView
+                    android:id="@+id/user_skill_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Skill: 2"
                     android:textSize="28sp"
-                    android:id="@+id/user_skill_rating"
-                    android:text="Skill: 2"/>
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="28dp"
@@ -82,11 +86,12 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/user_conduct_rating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Conduct: 3"
                     android:textSize="28sp"
-                    android:id="@+id/user_conduct_rating"
-                    android:text="Conduct: 3"/>
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="28dp"
@@ -105,7 +110,8 @@
         android:layout_marginTop="16dp"
         android:gravity="start"
         android:text="jdjksshfksdfjkdsfhjkdshfkjdshkfj jksdfjk sdhfjk dshfjk"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -119,64 +125,73 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="STATS"
             android:gravity="top|center"
-            android:textSize="24sp"/>
+            android:text="STATS"
+            android:textSize="24sp"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:id="@+id/user_games_played"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="start|center"
                 android:text="Games played: 22"
-                android:gravity="start|center"
-                android:textSize="22sp"/>
+                android:textSize="22sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:id="@+id/user_games_hosted"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="start|center"
                 android:text="Games hosted: 22"
-                android:gravity="start|center"
-                android:textSize="22sp"/>
+                android:textSize="22sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:id="@+id/user_favorite_sport"
-                android:text="Most played sport: Football"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:gravity="start|center"
-                android:textSize="22sp"/>
+                android:text="Most played sport: Football"
+                android:textSize="22sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
+
             <TextView
+                android:id="@+id/user_account_created"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:id="@+id/user_account_created"
-                android:text="Account created: 22/01/2019"
                 android:gravity="start|center"
-                android:textSize="22sp"/>
+                android:text="Account created: 22/01/2019"
+                android:textSize="22sp"
+                android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

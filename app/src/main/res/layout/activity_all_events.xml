@@ -30,7 +30,7 @@
             android:id="@+id/event_user_profile_button"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginStart="104dp"
+            android:layout_marginStart="80dp"
             android:background="@drawable/user_profile_icon"
             android:clickable="true"
             android:focusable="true"

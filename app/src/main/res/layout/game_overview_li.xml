@@ -17,37 +17,41 @@
         tools:srcCompat="@tools:sample/avatars"
         android:adjustViewBounds="true"
         android:padding="4dp"/>
+
     <TextView
         android:id="@+id/player_name_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/player_profile_image_0"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="4dp"
         android:text="Pratt"
         android:textSize="24sp"
-        android:gravity="center_horizontal"
-        android:layout_toRightOf="@id/player_profile_image_0"
-        android:paddingHorizontal="4dp"/>
+        android:textStyle="bold" />
     <!--                    skills-->
     <TextView
         android:id="@+id/skill_tag_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/player_name_0"
+        android:layout_toRightOf="@id/player_profile_image_0"
+        android:paddingHorizontal="4dp"
         android:text="Skills:"
         android:textSize="24sp"
-        android:layout_toRightOf="@id/player_profile_image_0"
-        android:layout_below="@id/player_name_0"
-        android:paddingHorizontal="4dp"/>
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/player_skills_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="24sp"
+        android:layout_below="@id/player_name_0"
+        android:layout_toRightOf="@id/skill_tag_0"
         android:gravity="center"
         android:paddingLeft="8dp"
         android:paddingRight="4dp"
-        android:layout_toRightOf="@id/skill_tag_0"
-        android:layout_below="@id/player_name_0"
-        />
+        android:text="3"
+        android:textSize="24sp"
+        android:textStyle="bold" />
     <ImageView
         android:layout_width="25dp"
         android:layout_height="28dp"
@@ -59,23 +63,25 @@
         android:id="@+id/conduct_tag_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/skill_tag_0"
+        android:layout_toRightOf="@id/player_profile_image_0"
+        android:paddingHorizontal="4dp"
         android:text="Conduct:"
         android:textSize="24sp"
-        android:layout_toRightOf="@id/player_profile_image_0"
-        android:layout_below="@id/skill_tag_0"
-        android:paddingHorizontal="4dp"/>
+        android:textStyle="bold" />
+
     <TextView
         android:id="@+id/player_conduct_0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="3"
-        android:textSize="24sp"
+        android:layout_below="@id/player_skills_0"
+        android:layout_toRightOf="@id/conduct_tag_0"
         android:gravity="center"
         android:paddingLeft="8dp"
         android:paddingRight="4dp"
-        android:layout_toRightOf="@id/conduct_tag_0"
-        android:layout_below="@id/player_skills_0"
-        />
+        android:text="3"
+        android:textSize="24sp"
+        android:textStyle="bold" />
     <ImageView
         android:layout_width="25dp"
         android:layout_height="28dp"
