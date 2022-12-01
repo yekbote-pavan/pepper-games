@@ -16,7 +16,7 @@ public class Database {
 
     private static final User appUser = new User("Pavan Yekbote", 3, 3,
             "I'm a freshman. " + "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2012");
+            22, 22, "Football", "22/01/2012", "profile_image_2");
 
     private static boolean showRating = true;
 
@@ -30,13 +30,13 @@ public class Database {
 //                22, 22, "Football", "22/01/2012");
         User Avram = new User("Avram", 5, 4, "I celebrate a victory when I start walking off the field. " +
                 "By the time I get to the locker room, I’m done.",
-                232, 2, "Football", "12/11/2021");
+                232, 2, "Football", "12/11/2021", "profile_image_1");
         User Pratt = new User("Pratt", 2, 1, "I figure practice puts your brains in your muscles.",
-                45, 37, "Football", "03/05/2011");
+                45, 37, "Football", "03/05/2011", "profile_image_3");
         User Nora = new User("Nora", 2, 5, "hiii",
-                5, 0, "Football", "22/01/2202");
+                5, 0, "Football", "22/01/2202", "profile_image_5");
         User Smith = new User("Smit", 4, 3, "In football, everything is complicated by the presence of the opposite team.",
-                52, 9, "Football", "22/01/2202");
+                52, 9, "Football", "22/01/2202", "profile_image_4");
 
         homePositions.put(PositionEnum.GK, Avram);
         homePositions.put(PositionEnum.RST, Pratt);

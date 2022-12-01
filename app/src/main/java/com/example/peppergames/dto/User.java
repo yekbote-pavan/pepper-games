@@ -10,8 +10,9 @@ public class User {
     private int gamesHosted;
     private String favoriteSport;
     private String accountCreatedDate;
+    private String profileImage;
 
-    public User(String name, int skillRating, int conductRating, String bio, int gamesPlayed, int gamesHosted, String favoriteSport, String accountCreatedDate) {
+    public User(String name, int skillRating, int conductRating, String bio, int gamesPlayed, int gamesHosted, String favoriteSport, String accountCreatedDate, String profileImage) {
         this.name = name;
         this.skillRating = skillRating;
         this.conductRating = conductRating;
@@ -20,7 +21,12 @@ public class User {
         this.gamesHosted = gamesHosted;
         this.favoriteSport = favoriteSport;
         this.accountCreatedDate = accountCreatedDate;
+        this.profileImage = profileImage;
     }
+
+    public String getProfileImage() { return profileImage; }
+
+    public void setProfileImage(String image_link) { this.profileImage = image_link; }
 
     public String getName() {
         return name;
