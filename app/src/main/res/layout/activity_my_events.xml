@@ -84,6 +84,7 @@
             android:layout_height="wrap_content"
             android:rotationX="-4"
             android:text="All Sports"
+            android:id="@+id/my_events_filter_button"
             android:visibility="visible"
             tools:visibility="visible"/>
 
