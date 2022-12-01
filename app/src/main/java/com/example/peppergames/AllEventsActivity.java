@@ -3,10 +3,14 @@ package com.example.peppergames;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +18,7 @@ import androidx.cardview.widget.CardView;
 
 import com.example.peppergames.dto.Event;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 
 public class AllEventsActivity extends AppCompatActivity {
 
@@ -32,6 +37,17 @@ public class AllEventsActivity extends AppCompatActivity {
             Database.setRatingToFalse();
         }
 
+        Intent intent = getIntent();
+        boolean[] filters = intent.getBooleanArrayExtra("filter");
+        if (filters == null) {
+            filters = new boolean[4];
+            filters[0] = true;
+            filters[1] = true;
+            filters[2] = true;
+            filters[3] = true;
+        }
+
+        boolean gamesICanJoin = intent.getBooleanExtra("games_i_can_join", true);
 
         int myEventsCount = 0;
         for (Event event: Database.getEvents()) {
@@ -43,10 +59,34 @@ public class AllEventsActivity extends AppCompatActivity {
         Button myEventsButton = findViewById(R.id.my_events_button);
         myEventsButton.setText(String.format("MY EVENTS (%d)", myEventsCount));
 
-//        toDo: generate events based on sorted value
         for (Event event : Database.getEvents()) {
             if (event.isPlaying()) {
                 continue;
+            }
+
+            switch (event.getGame()) {
+                case "Basketball":
+                    if (!filters[1]) {
+                        continue;
+                    }
+                case "Tennis":
+                    if (!filters[2]) {
+                        continue;
+                    }
+                case "Football":
+                    if (!filters[3]) {
+                        continue;
+                    }
+            }
+
+            if (gamesICanJoin) {
+                if (Database.getAppUser().getConductRating() < event.getConductRating()) {
+                    continue;
+                }
+
+                if (Database.getAppUser().getSkillRating() < event.getSkillRating()) {
+                    continue;
+                }
             }
 
             cardView = (CardView) getLayoutInflater().inflate(R.layout.event_card, null);
@@ -105,6 +145,106 @@ public class AllEventsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(AllEventsActivity.this, MyEventsActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        View filter = getLayoutInflater().inflate(R.layout.multiselect, null);
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean focusable = true;
+        PopupWindow filterPopup = new PopupWindow(filter, width, height, focusable);
+
+        CheckBox checkBox1 = filter.findViewById(R.id.checkBox);
+        CheckBox checkBox2 = filter.findViewById(R.id.checkBox2);
+        CheckBox checkBox3 = filter.findViewById(R.id.checkBox3);
+        CheckBox checkBox4 = filter.findViewById(R.id.checkBox4);
+        if (filters[0]) {
+            checkBox1.setChecked(true);
+        }
+
+        if (filters[1]) {
+            checkBox2.setChecked(true);
+        }
+
+        if (filters[2]) {
+            checkBox3.setChecked(true);
+        }
+
+        if (filters[3]) {
+            checkBox4.setChecked(true);
+        }
+
+        SwitchMaterial gamesICanJoinSwitch = filter.findViewById(R.id.games_i_can_join_switch);
+        if (gamesICanJoin) {
+            gamesICanJoinSwitch.setChecked(true);
+        }
+
+        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    checkBox2.setChecked(true);
+                    checkBox3.setChecked(true);
+                    checkBox4.setChecked(true);
+                } else {
+                    checkBox2.setChecked(false);
+                    checkBox3.setChecked(false);
+                    checkBox4.setChecked(false);
+                }
+            }
+        });
+
+
+        Button confirmFilter = filter.findViewById(R.id.filter_confirm_button);
+        Button cancelFilter = filter.findViewById(R.id.filter_cancel_button);
+
+        confirmFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                boolean[] filter = new boolean[4];
+                boolean isAnySelected = false;
+                Intent intent = getIntent();
+                if (checkBox1.isChecked()) {
+                    filter[0] = true;
+                    isAnySelected = true;
+                }
+
+                if (checkBox2.isChecked()) {
+                    filter[1] = true;
+                    isAnySelected = true;
+                }
+
+                if (checkBox3.isChecked()) {
+                    filter[2] = true;
+                    isAnySelected = true;
+                }
+
+                if (checkBox4.isChecked()) {
+                    filter[3] = true;
+                    isAnySelected = true;
+                }
+
+                if (isAnySelected) {
+                    finish();
+                    intent.putExtra("games_i_can_join", gamesICanJoinSwitch.isChecked());
+                    intent.putExtra("filter", filter);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        cancelFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filterPopup.dismiss();
+            }
+        });
+
+        Button filterButton = findViewById(R.id.filter_button);
+        filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filterPopup.showAtLocation(filter, Gravity.BOTTOM, 0, 0);
             }
         });
     }
