@@ -26,8 +26,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Player: "
+                    android:textColor="@color/black"
                     android:textSize="25dp"
-                    android:textColor="@color/black" />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/position_info_player_TBD"
@@ -51,7 +52,8 @@
                     android:layout_height="wrap_content"
                     android:text="Skills: "
                     android:textColor="@color/black"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/position_info_skills_TBD"
@@ -70,12 +72,14 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/position_info_conduct"
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Conduct: "
+                    android:textColor="@color/black"
                     android:textSize="25dp"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,12 +97,14 @@
                 android:layout_marginTop="10dp"
                 android:id="@+id/position_info_position"
                 >
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Position: "
+                    android:textColor="@color/black"
                     android:textSize="25dp"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -115,10 +121,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/position_info"
-            android:layout_marginTop="25dp"
-            android:textSize="25dp"
             android:layout_centerHorizontal="true"
-            android:text="Back" />
+            android:layout_marginTop="25dp"
+            android:backgroundTint="#4CAF50"
+            android:text="Back"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00FDFDFD"
     android:orientation="vertical"
     tools:ignore="HardcodedText">
 
@@ -15,153 +15,170 @@
         android:text="Create Activity"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
+        android:textColor="#000000"
         android:textStyle="bold" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="2dp"
         android:background="#750328fc"
-        android:translationY="60dp"/>
+        android:translationY="60dp" />
 
     <TextView
         android:layout_width="208dp"
         android:layout_height="72dp"
-        android:translationY="75dp"
         android:text="Sport : "
+        android:textColor="#000000"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textAlignment="center" />
+        android:translationY="75dp" />
 
     <TextView
         android:layout_width="208dp"
         android:layout_height="72dp"
-        android:translationY="150dp"
+        android:textColor="#000000"
         android:text="Venue :"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textAlignment="center"/>
+        android:translationY="150dp" />
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <Spinner
             android:id="@+id/sport_spinner"
             android:layout_width="160dp"
             android:layout_height="50dp"
-            android:translationY="75dp"
+            android:background="#334CAF50"
+            android:spinnerMode="dropdown"
             android:translationX="208dp"
-            android:background="#750328fc"
-            android:spinnerMode="dropdown"/>
+            android:translationY="75dp" />
 
         <Spinner
             android:id="@+id/venue_spinner"
             android:layout_width="160dp"
             android:layout_height="50dp"
-            android:translationY="150dp"
+            android:background="#334CAF50"
+            android:spinnerMode="dropdown"
             android:translationX="208dp"
-            android:background="#750328fc"
-            android:spinnerMode="dropdown"/>
+            android:translationY="150dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RatingBar
+                android:id="@+id/skills_rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:progressTint="#FFEB3B"
+                android:rating="3"
+                android:scaleX="0.8"
+                android:scaleY="0.8"
+                android:translationX="180dp"
+                android:translationY="520dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RatingBar
+                    android:id="@+id/conduct_rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:progressTint="#FFEB3B"
+                    android:rating="3"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    android:translationX="180dp"
+                    android:translationY="580dp" />
+            </RelativeLayout>
+        </RelativeLayout>
     </RelativeLayout>
 
     <TextView
         android:layout_width="208dp"
         android:layout_height="72dp"
-        android:translationY="225dp"
         android:text="Date :"
+        android:textColor="#000000"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textAlignment="center"/>
+        android:translationY="225dp" />
+
     <RelativeLayout
         android:layout_width="188dp"
         android:layout_height="208dp"
-        android:translationY="208dp"
         android:translationX="208dp"
+        android:translationY="208dp"
         tools:context=".MainActivity">
 
         <!--                 Add CalendarView to display the Calendar -->
         <CalendarView
             android:id="@+id/date_selector"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </CalendarView>
+            android:layout_marginStart="-20dp"
+            android:scaleX="1.05"
+            android:scaleY="0.96"
+            android:layout_height="wrap_content"></CalendarView>
 
     </RelativeLayout>
+
     <TextView
         android:layout_width="208dp"
         android:layout_height="72dp"
-        android:translationY="440dp"
         android:text="Time :"
+        android:textColor="#000000"
+        android:textAlignment="center"
         android:textSize="28sp"
-        android:textAlignment="center"/>
+        android:translationY="440dp" />
+
     <RelativeLayout
         android:id="@+id/idRLContainer"
-        android:layout_width="196dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp"
         android:orientation="vertical"
         android:translationX="208dp"
         android:translationY="420dp"
         tools:context=".MainActivity2">
+
         <TimePicker
+            android:id="@+id/time_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:timePickerMode="spinner"
-            android:id="@+id/time_picker"/>
+            android:layout_marginLeft="-30dp"
+            android:scaleX="1"
+            android:timePickerMode="spinner" />
     </RelativeLayout>
 
     <TextView
         android:layout_width="208dp"
         android:layout_height="75dp"
-        android:translationY="525dp"
         android:text="Min. Skill Rating :"
+        android:textAlignment="center"
+        android:textColor="#000000"
         android:textSize="22sp"
-        android:textAlignment="center"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RatingBar
-            android:id="@+id/conduct_rating_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:rating="3"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
-            android:translationX="180dp"
-            android:translationY="580dp" />
-    </RelativeLayout>
+        android:translationY="525dp" />
 
     <TextView
         android:layout_width="208dp"
         android:layout_height="75dp"
-        android:translationY="575dp"
-        android:textAlignment="center"
+        android:textColor="#000000"
         android:text="Min. Conduct Rating :"
-        android:textSize="22sp"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RatingBar
-            android:id="@+id/skills_rating_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:rating="3"
-            android:scaleX="0.8"
-            android:scaleY="0.8"
-            android:translationX="180dp"
-            android:translationY="520dp" />
-    </RelativeLayout>
+        android:textAlignment="center"
+        android:textSize="22sp"
+        android:translationY="575dp" />
 
 
     <Button
         android:id="@+id/create_event_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:translationY="650dp"
-
         android:layout_gravity="center_horizontal"
+
+        android:backgroundTint="#4CAF50"
         android:text="Create"
         android:textSize="30sp"
-        android:backgroundTint="#750328fc"
-        />
+        android:translationY="650dp" />
 </FrameLayout>
