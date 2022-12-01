@@ -52,6 +52,7 @@
             android:layout_width="204dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33002229"
+            android:id="@+id/my_events_counter"
             android:text="MY EVENTS"
             style="?android:attr/buttonBarButtonStyle" />
     </LinearLayout>

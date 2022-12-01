@@ -31,6 +31,18 @@ public class AllEventsActivity extends AppCompatActivity {
             startActivity(intent);
             Database.setRatingToFalse();
         }
+
+
+        int myEventsCount = 0;
+        for (Event event: Database.getEvents()) {
+            if (event.isPlaying()) {
+                myEventsCount++;
+            }
+        }
+
+        Button myEventsButton = findViewById(R.id.my_events_button);
+        myEventsButton.setText(String.format("MY EVENTS (%d)", myEventsCount));
+
 //        toDo: generate events based on sorted value
         for (Event event : Database.getEvents()) {
             if (event.isPlaying()) {
@@ -88,7 +100,6 @@ public class AllEventsActivity extends AppCompatActivity {
             }
         });
 
-        Button myEventsButton = findViewById(R.id.my_events_button);
         myEventsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
