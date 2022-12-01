@@ -73,12 +73,14 @@ public class GameOverview extends AppCompatActivity {
                 String cur_name = teamPosition.getValue().getName();
                 int cur_conduct = teamPosition.getValue().getConductRating();
                 int cur_skill = teamPosition.getValue().getSkillRating();
+                GO_Player player_prof = new GO_Player(cur_name, cur_conduct, cur_skill);
+
                 String image = teamPosition.getValue().getProfileImage();
-                GO_Player player_prof = new GO_Player(cur_name, cur_conduct, cur_skill, image);
                 ImageView player_profile = findViewById(R.id.player_profile_image_0);
 //                String current_player_profile_image_link = user.getProfileImage();
                 int current_player_profile_image = getResId(image, R.drawable.class);
                 player_profile.setImageResource(current_player_profile_image);
+
                 mn.add(player_prof);
             }
         }
