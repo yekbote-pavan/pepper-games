@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.example.peppergames.dto.PositionEnum;
 import com.example.peppergames.dto.TeamEnum;
 import com.example.peppergames.dto.User;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,12 +31,12 @@ public class PickPosition extends AppCompatActivity {
 
     private Event current_event;
     private ImageButton current_button;
-    private static final User Trump = new User("Donald Trump", 0, 3, "I was a president. " +
-            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-            22, 22, "Football", "22/01/2202");
+//    private static final User Trump = new User("Donald Trump", 0, 3, "I was a president. " +
+//            "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
+//            22, 22, "Football", "22/01/2202");
 
     PositionEnum pos_selected = PositionEnum.CM;
-    TeamEnum team_selected = TeamEnum.AWAY;
+    TeamEnum team_selected;
 
     private Map<PositionEnum, String> position_dict = new HashMap<PositionEnum, String>(){{
         put(PositionEnum.CM, "centralMidfielder");
@@ -129,7 +131,7 @@ public class PickPosition extends AppCompatActivity {
         text = findViewById(R.id.position_game_location);
         text.setText(current_event.getLocation());
 
-        // update occupied positions with a different image: ic_round_person
+        // update occupied positions with different images:
         Map<PositionEnum, User> homeTeam = current_event.getTeamPositions().get(TeamEnum.HOME);
         List<String> home_team_takens = new ArrayList<>();
         for (Map.Entry<PositionEnum, User> entry : homeTeam.entrySet()){
@@ -139,7 +141,10 @@ public class PickPosition extends AppCompatActivity {
             home_team_takens.add(id_str);
             int id = getResources().getIdentifier(id_str, "id", getPackageName());
             current_button = (ImageButton) findViewById(id);
-            current_button.setImageResource(R.drawable.ic_round_person);
+            String current_player_profile_image_link = user.getProfileImage();
+            int current_player_profile_image = getResId(current_player_profile_image_link, R.drawable.class);;
+            current_button.setImageResource(current_player_profile_image);
+//            current_button.setImageResource(R.drawable.ic_round_person);
         }
 
         Map<PositionEnum, User> awayTeam = current_event.getTeamPositions().get(TeamEnum.AWAY);
@@ -151,7 +156,10 @@ public class PickPosition extends AppCompatActivity {
             away_team_takens.add(id_str);
             int id = getResources().getIdentifier(id_str, "id", getPackageName());
             current_button = (ImageButton) findViewById(id);
-            current_button.setImageResource(R.drawable.ic_round_person);
+            String current_player_profile_image_link = user.getProfileImage();
+            int current_player_profile_image = getResId(current_player_profile_image_link, R.drawable.class);;
+            current_button.setImageResource(current_player_profile_image);
+//            current_button.setImageResource(R.drawable.ic_round_person);
         }
 
         // Pop-up windows
@@ -171,6 +179,7 @@ public class PickPosition extends AppCompatActivity {
         for (Map.Entry<String, Integer> entry : position_title_to_id.entrySet()){
             String position_title = entry.getKey();
             int position_id = entry.getValue();
+//            Log.println(Log.WARN, "pos_0:", position_title);
             button_click = findViewById(position_id);
             // 逻辑错了 不应该team找title_enum 因为home和away可能共用同样的enum
             // the position is taken by the other player
@@ -210,20 +219,55 @@ public class PickPosition extends AppCompatActivity {
                     }
                 });
             } else {    // the position is not taken by others
+                team_selected = TeamEnum.HOME;
                 pos_selected = position_dict_rev.get(position_title);
-                if (position_title.endsWith("1")){
-                    team_selected = TeamEnum.HOME;
+//                Log.println(Log.WARN, "position_str1:: ", position_title);
+//                Log.println(Log.WARN, "position_enum1: ", pos_selected.name());
+                if (position_title.endsWith("2")){
+                    team_selected = TeamEnum.AWAY;
                 }
+//                Log.println(Log.WARN, "team_1: ", team_selected.name());
+//                Log.println(Log.WARN, "button_id1: ", String.valueOf(button_click.getId()));
+                ImageButton finalButton_click = button_click;
                 button_click.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         TextView text = pickPosition.findViewById(R.id.confirm_popup_position_dynamic);
+                        pos_selected = position_dict_rev.get(position_title);
+                        if (position_title.endsWith("2")){
+                            team_selected = TeamEnum.AWAY;
+                        } else {
+                            team_selected = TeamEnum.HOME;
+                        }
+//                        Log.println(Log.WARN, "pos_2:", pos_selected.name());
+//                        Log.println(Log.WARN, "team_2: ", team_selected.name());
+//                        Log.println(Log.WARN, "button_id2: ", String.valueOf(finalButton_click.getId()));
                         String question_form = position_title_to_question_form.get(position_title);
                         text.setText(question_form);
                         text = pickPosition.findViewById(R.id.confirm_popup_team_dynamic);
                         String team_name = (position_title.endsWith("1") ? "Home Team" : "Away Team");
                         text.setText(team_name);
                         popupWindow_position_confirm.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
+
+                        // YES! button
+                        Button popup_position_choose_yes = (Button) pickPosition.findViewById(R.id.confirm_popup_yes);
+                        popup_position_choose_yes.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                User user = Database.getAppUser();
+                                // update the team map
+                                Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
+                                Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);
+//                                Log.println(Log.WARN, "pos_3: ", pos_selected.name());
+//                                Log.println(Log.WARN, "team_3: ", team_selected.name());
+                                previous_event_team.put(pos_selected, user);
+                                // update: event.isPlaying
+                                current_event.setPlaying(true);
+                                // jump to MyEvents page
+                                Intent intent = new Intent(PickPosition.this, MyEventsActivity.class);
+                                startActivity(intent);
+                            }
+                        });
                     }
                 });
             }
@@ -266,22 +310,24 @@ public class PickPosition extends AppCompatActivity {
         });
 
         // YES! button
-        Button popup_position_choose_yes = (Button) pickPosition.findViewById(R.id.confirm_popup_yes);
-        popup_position_choose_yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                User user = Database.getAppUser();
-                // update the team map
-                Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
-                Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);
-                previous_event_team.put(pos_selected, user);
-                // update: event.isPlaying
-                current_event.setPlaying(true);
-                // jump to MyEvents page
-                Intent intent = new Intent(PickPosition.this, MyEventsActivity.class);
-                startActivity(intent);
-            }
-        });
+//        Button popup_position_choose_yes = (Button) pickPosition.findViewById(R.id.confirm_popup_yes);
+//        popup_position_choose_yes.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                User user = Database.getAppUser();
+//                // update the team map
+//                Map<TeamEnum, Map<PositionEnum, User>> previous_event = current_event.getTeamPositions();
+//                Map<PositionEnum, User> previous_event_team = previous_event.get(team_selected);
+//                Log.println(Log.WARN, "pos_2: ", pos_selected.name());
+//                Log.println(Log.WARN, "team_2: ", team_selected.name());
+//                previous_event_team.put(pos_selected, user);
+//                // update: event.isPlaying
+//                current_event.setPlaying(true);
+//                // jump to MyEvents page
+//                Intent intent = new Intent(PickPosition.this, MyEventsActivity.class);
+//                startActivity(intent);
+//            }
+//        });
 //        ImageButton gkButton = findViewById(R.id.leftStriker2);
 //        gkButton.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -289,5 +335,16 @@ public class PickPosition extends AppCompatActivity {
 //                popupWindow.showAtLocation(pickPosition, Gravity.BOTTOM, 0, 0);
 //            }
 //        });
+    }
+
+    private static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }
