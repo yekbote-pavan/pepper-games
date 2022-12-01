@@ -180,13 +180,12 @@
                             android:scaleType="fitCenter"></ImageView>
 
                         <EditText
-                            android:id="@+id/position_game_conduct_rating"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:gravity="center"
                             android:hint="Conduct: 5"
-                            android:textColorHint="@color/black"
-                            android:textStyle="bold" />
+                            android:id="@+id/position_game_conduct_rating"
+                            android:textColorHint="@color/black" />
 
                         <ImageView
                             android:layout_height="39dp"
@@ -207,15 +206,13 @@
                             android:scaleType="fitCenter"
                             android:backgroundTint="#00002229"
                             ></ImageView>
-
                         <EditText
-                            android:id="@+id/position_game_location"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:hint="ARC"
-                            android:textColorHint="@color/black"
-                            android:textStyle="bold" />
+                            android:id="@+id/position_game_location"
+                            android:textColorHint="@color/black"/>
 
 
 
@@ -421,10 +418,10 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="5dp"
+                android:backgroundTint="#4CAF50"
                 android:text="Surprise Me"
                 android:textAllCaps="false"
-                android:textSize="25dp"
-                android:textStyle="bold" />
+                android:textSize="25dp" />
 
         </RelativeLayout>
 
