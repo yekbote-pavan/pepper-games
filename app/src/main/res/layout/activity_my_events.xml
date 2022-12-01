@@ -9,7 +9,7 @@
     tools:ignore="InefficientWeight, SpeakableTextPresentCheck, HardcodedText">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="58dp"
         android:orientation="horizontal"
         android:id="@+id/my_events_mega_layout">
         <TextView
@@ -27,7 +27,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/user_profile_icon"
             android:maxHeight="44dp"
-            android:layout_marginStart="124dp"
+            android:layout_marginStart="120dp"
             android:scaleType="fitCenter"
             android:id="@+id/my_event_user_profile_button"
             android:clickable="true"
@@ -42,16 +42,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="204dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:id="@+id/all_events_button"
             android:text="ALL EVENTS"
+            android:layout_marginStart="4dp"
             style="?android:attr/buttonBarButtonStyle" />
 
         <Button
-            android:layout_width="204dp"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#33002229"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
             android:id="@+id/my_events_counter"
             android:text="MY EVENTS"
             style="?android:attr/buttonBarButtonStyle" />
@@ -59,7 +62,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="544dp"
+        android:layout_height="560dp"
         android:layout_below="@id/my_all_events_my_events_button_layout"
         android:id="@+id/my_event_scroll">
         <LinearLayout
@@ -75,15 +78,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/my_event_scroll"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:rotationX="-4"
-            android:text="All Sports"
+            android:text="Sports"
             android:id="@+id/my_events_filter_button"
             android:visibility="visible"
             tools:visibility="visible"/>
@@ -91,7 +94,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
+            android:layout_marginStart="154dp"
             android:text="Date"/>
 
         <ImageView
