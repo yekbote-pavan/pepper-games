@@ -7,12 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.peppergames.dto.PositionEnum;
@@ -71,7 +73,12 @@ public class GameOverview extends AppCompatActivity {
                 String cur_name = teamPosition.getValue().getName();
                 int cur_conduct = teamPosition.getValue().getConductRating();
                 int cur_skill = teamPosition.getValue().getSkillRating();
-                GO_Player player_prof = new GO_Player(cur_name, cur_conduct, cur_skill);
+                String image = teamPosition.getValue().getProfileImage();
+                GO_Player player_prof = new GO_Player(cur_name, cur_conduct, cur_skill, image);
+                ImageView player_profile = findViewById(R.id.player_profile_image_0);
+//                String current_player_profile_image_link = user.getProfileImage();
+                int current_player_profile_image = getResId(image, R.drawable.class);
+                player_profile.setImageResource(current_player_profile_image);
                 mn.add(player_prof);
             }
         }
@@ -79,6 +86,17 @@ public class GameOverview extends AppCompatActivity {
         GO_PlayerListAdapter adapter = new GO_PlayerListAdapter(mn, this);
         adapter.updateData(mn);
         rv.setAdapter(adapter);
+    }
+
+    private static int getResId(String resName, Class<?> c) {
+
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 
 }
