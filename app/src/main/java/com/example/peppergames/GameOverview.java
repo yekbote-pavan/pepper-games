@@ -13,6 +13,7 @@ import java.util.Map;
 
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -72,6 +73,14 @@ public class GameOverview extends AppCompatActivity {
                 }
             });
         }
+
+        ImageButton shareButton = findViewById(R.id.game_overview_share_button);
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Link copied to Clipboard", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         // Dynamic scroll view
         RecyclerView rv = findViewById(R.id.game_overview);
