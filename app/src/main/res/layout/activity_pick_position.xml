@@ -119,6 +119,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="Football"
+                            android:layout_marginLeft="15dp"
                             android:textColorHint="@color/black"
                             android:textStyle="bold" />
 
@@ -167,6 +168,7 @@
                             android:layout_height="wrap_content"
                             android:gravity="left"
                             android:hint="Skills: 5"
+                            android:layout_marginLeft="15dp"
                             android:textColorHint="@color/black"
                             android:textStyle="bold" />
 
@@ -185,7 +187,8 @@
                             android:gravity="center"
                             android:hint="Conduct: 5"
                             android:id="@+id/position_game_conduct_rating"
-                            android:textColorHint="@color/black" />
+                            android:textColorHint="@color/black"
+                            android:textStyle="bold"/>
 
                         <ImageView
                             android:layout_height="39dp"
@@ -198,7 +201,7 @@
 
                         <ImageView
                             android:src="@drawable/location"
-                            android:layout_marginLeft = "40dp"
+                            android:layout_marginLeft = "60dp"
                             android:layout_height="30dp"
                             android:maxWidth="1dp"
                             android:layout_width="30dp"
@@ -211,6 +214,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="0dp"
                             android:hint="ARC"
+                            android:textStyle="bold"
                             android:id="@+id/position_game_location"
                             android:textColorHint="@color/black"/>
 
@@ -245,36 +249,42 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_gravity="top"
-            android:layout_marginTop="150dp"
-            android:layout_marginBottom="60dp"
+            android:layout_marginTop="158dp"
+            android:layout_marginBottom="64dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
             android:scaleType="centerCrop"
             android:src="@drawable/soccer_field" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/soccer_field"
             android:layout_alignTop="@+id/soccer_field"
             android:layout_alignParentEnd="true"
+
+            android:layout_marginStart="15dp"
             android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
             android:background="@drawable/back"
             android:text="Home"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/soccer_field"
             android:layout_alignBottom="@+id/soccer_field"
+
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="0dp"
+            android:layout_marginStart="15dp"
             android:layout_marginBottom="0dp"
             android:background="@drawable/back"
             android:text="Away"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:textSize="24dp"
+            android:textStyle="bold" />
 
 
         <ImageButton
