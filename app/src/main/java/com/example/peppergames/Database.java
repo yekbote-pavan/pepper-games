@@ -49,7 +49,7 @@ public class Database {
         positions.put(TeamEnum.AWAY, awayPositions);
 
         Event amateurGame = new Event(
-                "Football", 1, 1, "11 AM, 19 Nov", 12,
+                "Football", 1, 1, "06 AM, 19 Nov", 12,
                 "ARC", false, positions);
 
 
@@ -67,11 +67,10 @@ public class Database {
         positions2.put(TeamEnum.AWAY, awayPositions2);
         Event proGame = new Event(
                 "Football", 5, 4, "07 PM, 19 Nov", 12
-                , "ARC", true, positions2);
+                , "ARC", false, positions2);
 
         events.add(amateurGame);
         events.add(proGame);
-        events.add(amateurGame);
     }
 
     public static List<Event> getEvents() {

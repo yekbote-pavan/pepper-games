@@ -3,6 +3,7 @@ package com.example.peppergames;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AllEventsActivity extends AppCompatActivity {
 
@@ -50,6 +53,7 @@ public class AllEventsActivity extends AppCompatActivity {
             filters[3] = true;
         }
 
+        boolean arrowDown = intent.getBooleanExtra("sorting_down", true);
         boolean gamesICanJoin = intent.getBooleanExtra("games_i_can_join", true);
 
         int myEventsCount = 0;
@@ -61,6 +65,39 @@ public class AllEventsActivity extends AppCompatActivity {
 
         Button myEventsButton = findViewById(R.id.my_events_button);
         myEventsButton.setText(String.format("MY EVENTS (%d)", myEventsCount));
+
+        String sort = intent.getStringExtra("sort");
+        if (sort == null) {
+            sort = "Date";
+        }
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+            if (sort.equals("Conduct")) {
+                Database.events = Database.getEvents().stream().sorted(new Comparator<Event>() {
+                    @Override
+                    public int compare(Event o1, Event o2) {
+                        int multiplier = arrowDown ? -1 : 1;
+                        return multiplier * Integer.compare(o1.getSkillRating(), o2.getSkillRating());
+                    }
+                }).collect(Collectors.toList());
+            } else if (sort.equals("Skills")) {
+                Database.events = Database.getEvents().stream().sorted(new Comparator<Event>() {
+                    @Override
+                    public int compare(Event o1, Event o2) {
+                        int multiplier = arrowDown ? -1 : 1;
+                        return multiplier * Integer.compare(o1.getConductRating(), o2.getConductRating());
+                    }
+                }).collect(Collectors.toList());
+            } else {
+                Database.events = Database.getEvents().stream().sorted(new Comparator<Event>() {
+                    @Override
+                    public int compare(Event o1, Event o2) {
+                        int multiplier = arrowDown ? -1 : 1;
+                        return multiplier * String.CASE_INSENSITIVE_ORDER.compare(o1.getDate(), o2.getDate());
+                    }
+                }).collect(Collectors.toList());
+            }
+        }
 
         for (Event event : Database.getEvents()) {
             if (event.isPlaying()) {
@@ -152,7 +189,7 @@ public class AllEventsActivity extends AppCompatActivity {
         });
 
         View filter = getLayoutInflater().inflate(R.layout.multiselect, null);
-        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int width = LinearLayout.LayoutParams.WRAP_CONTENT;
         int height = LinearLayout.LayoutParams.WRAP_CONTENT;
         boolean focusable = true;
         PopupWindow filterPopup = new PopupWindow(filter, width, height, focusable);
@@ -251,7 +288,6 @@ public class AllEventsActivity extends AppCompatActivity {
             }
         });
 
-        boolean arrowDown = intent.getBooleanExtra("sorting_down", true);
         ImageButton sortingButton = findViewById(R.id.sorting_arrow);
         if (!arrowDown) {
             sortingButton.setImageResource(R.drawable.up_arrow);
@@ -270,6 +306,57 @@ public class AllEventsActivity extends AppCompatActivity {
                 finish();
                 intent.putExtra("sorting_down", !arrowDown);
                 startActivity(getIntent());
+            }
+        });
+
+        View sortView = getLayoutInflater().inflate(R.layout.sort, null);
+        int sortWidth = LinearLayout.LayoutParams.MATCH_PARENT;
+        int sortHeight = LinearLayout.LayoutParams.WRAP_CONTENT;
+        boolean sortFocusable = true;
+        PopupWindow sortPopup = new PopupWindow(sortView, sortWidth, sortHeight, sortFocusable);
+
+        Button dateButton = sortView.findViewById(R.id.date_sort);
+        dateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortPopup.dismiss();
+                finish();
+                intent.putExtra("sort", "Date");
+                intent.putExtra("sorting_down", true);
+                startActivity(getIntent());
+            }
+        });
+
+        Button conductButton = sortView.findViewById(R.id.conduct_sort);
+        conductButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortPopup.dismiss();
+                finish();
+                intent.putExtra("sort", "Conduct");
+                intent.putExtra("sorting_down", true);
+                startActivity(getIntent());
+            }
+        });
+
+        Button skillButton = sortView.findViewById(R.id.skill_sort);
+        skillButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortPopup.dismiss();
+                finish();
+                intent.putExtra("sort", "Skills");
+                intent.putExtra("sorting_down", true);
+                startActivity(getIntent());
+            }
+        });
+
+        Button sortButton = findViewById(R.id.sort_button);
+        sortButton.setText(sort);
+        sortButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortPopup.showAtLocation(sortView, Gravity.BOTTOM, 0, 0);
             }
         });
     }
