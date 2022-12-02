@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/skill_sort"
             android:backgroundTint="#4CAF50"
-            android:text="Skill">
+            android:text="Skills">
         </Button>
 
         <Button
