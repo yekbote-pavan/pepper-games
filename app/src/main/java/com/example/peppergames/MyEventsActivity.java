@@ -23,6 +23,9 @@ import com.example.peppergames.dto.TeamEnum;
 import com.example.peppergames.dto.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.switchmaterial.SwitchMaterial;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class MyEventsActivity extends AppCompatActivity {
@@ -278,6 +281,29 @@ public class MyEventsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 filterPopup.showAtLocation(filter, Gravity.BOTTOM, 0, 0);
+            }
+        });
+
+
+        boolean arrowDown = intent.getBooleanExtra("sorting_down", true);
+        ImageButton sortingButton = findViewById(R.id.my_sorting_arrow);
+        if (!arrowDown) {
+            sortingButton.setImageResource(R.drawable.up_arrow);
+        }
+
+        sortingButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                List<Event> events = Database.getEvents();
+                List<Event> newEvents = new ArrayList<>();
+                for (int i = events.size() - 1; i > -1; i--) {
+                    newEvents.add(events.get(i));
+                }
+
+                Database.events = newEvents;
+                finish();
+                intent.putExtra("sorting_down", !arrowDown);
+                startActivity(getIntent());
             }
         });
     }

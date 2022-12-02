@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class Database {
 
-    private static final List<Event> events = new ArrayList<>();
+    public static List<Event> events = new ArrayList<>();
 
     private static final User appUser = new User("Pavan Yekbote", 3, 3,
             "I'm a freshman. " + "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",

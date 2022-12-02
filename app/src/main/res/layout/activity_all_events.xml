@@ -93,26 +93,32 @@
         android:orientation="horizontal">
 
         <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/filter_button"
+            android:layout_width="132dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#4CAF50"
             android:rotationX="-4"
             android:text="Sports"
+            android:drawableLeft="@drawable/filter_icon"
+            android:textAlignment="textEnd"
+            android:textStyle="bold"
             android:visibility="visible"
-            android:backgroundTint="#4CAF50"
-            tools:visibility="visible"/>
+            tools:visibility="visible" />
+
         <Button
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="162dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="112dp"
             android:backgroundTint="#4CAF50"
-            android:text="Date"/>
+            android:text="Date"
+            android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:contentDescription="sorting arrow"
-            android:src="@drawable/arrow" />
+        <ImageButton
+            android:id="@+id/sorting_arrow"
+            android:layout_width="44dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#11000000"
+            android:src="@drawable/down_arrow_longer" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
