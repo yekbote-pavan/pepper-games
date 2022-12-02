@@ -12,6 +12,8 @@ import android.widget.CalendarView;
 import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TimePicker;
+import android.widget.Toast;
+
 import com.example.peppergames.dto.Event;
 import com.example.peppergames.dto.PositionEnum;
 import com.example.peppergames.dto.TeamEnum;
@@ -72,29 +74,37 @@ public class CreateEventActivity extends AppCompatActivity {
         createEventButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String sport = sportSpinner.getSelectedItem().toString();
-                String venue = venueSpinner.getSelectedItem().toString();
+                if (skillsRating.getRating() > Database.getAppUser().getSkillRating() || conductRating.getRating() > Database.getAppUser().getConductRating()) {
+                    if (conductRating.getRating() > Database.getAppUser().getConductRating()) {
+                        Toast.makeText(getApplicationContext(), "Max conduct rating allowed: 2", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Max skill rating allowed: 2", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    String sport = sportSpinner.getSelectedItem().toString();
+                    String venue = venueSpinner.getSelectedItem().toString();
 
-                int hour = timePicker.getCurrentHour();
-                int min = timePicker.getCurrentMinute();
-                SimpleDateFormat dateFormat = new SimpleDateFormat("hh a");
+                    int hour = timePicker.getCurrentHour();
+                    int min = timePicker.getCurrentMinute();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("hh a");
 
-                if (date == null) {
-                    date = sdf.format(new Date());
+                    if (date == null) {
+                        date = sdf.format(new Date());
+                    }
+
+                    Map<TeamEnum, Map<PositionEnum, User>> positions = new HashMap<>();
+                    positions.put(TeamEnum.HOME, new HashMap<>());
+                    positions.put(TeamEnum.AWAY, new HashMap<>());
+
+                    Event event = new Event(sport, Math.round(skillsRating.getRating()),
+                            Math.round(conductRating.getRating()),
+                            String.format("%s, %s", dateFormat.format(new Time(hour, min, 0)), date),
+                            12, venue, true, positions);
+                    Database.addEvent(event);
+                    Intent intent = new Intent(CreateEventActivity.this, PickPosition.class);
+                    intent.putExtra("event_index", Database.getEvents().size() - 1);
+                    startActivity(intent);
                 }
-
-                Map<TeamEnum, Map<PositionEnum, User>> positions = new HashMap<>();
-                positions.put(TeamEnum.HOME, new HashMap<>());
-                positions.put(TeamEnum.AWAY, new HashMap<>());
-
-                Event event = new Event(sport, Math.round(skillsRating.getRating()),
-                        Math.round(conductRating.getRating()),
-                        String.format("%s, %s", dateFormat.format(new Time(hour, min, 0)), date),
-                        12, venue, true, positions);
-                Database.addEvent(event);
-                Intent intent = new Intent(CreateEventActivity.this, PickPosition.class);
-                intent.putExtra("event_index", Database.getEvents().size() - 1);
-                startActivity(intent);
             }
         });
     }
