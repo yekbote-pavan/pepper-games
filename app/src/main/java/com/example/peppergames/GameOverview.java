@@ -1,5 +1,7 @@
 package com.example.peppergames;
 
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -11,8 +13,10 @@ import java.util.List;
 import java.util.Map;
 
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +31,7 @@ public class GameOverview extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_overview);
         int game_idx = getIntent().getIntExtra("event_index", -1);
+        boolean isJoinAllowed = getIntent().getBooleanExtra("is_join_allowed", true);
 
         // Get the activity which was selected before this in the last screen somehow
         // for now we'll take the game at index 0
@@ -52,28 +57,35 @@ public class GameOverview extends AppCompatActivity {
         cur_players = Database.getCurrentPlayers(game_idx);
         textView.setText(String.format("%d/%d", cur_players, Database.getEvents().get(game_idx).getMaxPlayers()));
 
+
         Button joinButton = findViewById(R.id.game_overview_join_button);
-        if (Database.getAppUser().getSkillRating() < Database.getEvents().get(game_idx).getSkillRating()
-                || Database.getAppUser().getConductRating() < Database.getEvents().get(game_idx).getConductRating()) {
-            joinButton.setClickable(false);
-            joinButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "Rating Too Low", Toast.LENGTH_SHORT).show();
-                }
-            });
+        ImageButton shareButton = findViewById(R.id.game_overview_share_button);
+        if (isJoinAllowed) {
+            if (Database.getAppUser().getSkillRating() < Database.getEvents().get(game_idx).getSkillRating()
+                    || Database.getAppUser().getConductRating() < Database.getEvents().get(game_idx).getConductRating()) {
+                joinButton.setClickable(false);
+                joinButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getApplicationContext(), "Rating Too Low", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            } else {
+                joinButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(GameOverview.this, PickPosition.class);
+                        intent.putExtra("event_index", game_idx);
+                        startActivity(intent);
+                    }
+                });
+            }
         } else {
-            joinButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent(GameOverview.this, PickPosition.class);
-                    intent.putExtra("event_index", game_idx);
-                    startActivity(intent);
-                }
-            });
+            ((ViewGroup) joinButton.getParent()).removeView(joinButton);
+            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(MATCH_PARENT, MATCH_PARENT);
+            shareButton.setLayoutParams(layoutParams);
         }
 
-        ImageButton shareButton = findViewById(R.id.game_overview_share_button);
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

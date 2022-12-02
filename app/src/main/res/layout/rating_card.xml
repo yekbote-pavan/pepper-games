@@ -31,10 +31,12 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
+            android:id="@+id/player_position_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/player_profile_image_0"
-            android:layout_marginLeft="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:text="GK"
             android:textSize="24dp"
             android:textStyle="bold" />
@@ -64,7 +66,7 @@
                 android:layout_toRightOf="@id/player_profile_image_0"
                 android:gravity="center"
                 android:paddingHorizontal="4dp"
-                android:text="Skills"
+                android:text="Skills     "
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -94,7 +96,7 @@
                 android:layout_toRightOf="@id/player_profile_image_0"
                 android:gravity="center"
                 android:paddingHorizontal="4dp"
-                android:text="Cond."
+                android:text="Conduct"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 

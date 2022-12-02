@@ -32,18 +32,19 @@ public class RatingPopUp extends AppCompatActivity {
 
         // Iterator
         for (Map.Entry<PositionEnum, User> set : positionsMap.entrySet()){
-            System.out.println(set.getKey() + " = " + set.getValue());
-
             cardView = (CardView) getLayoutInflater().inflate(R.layout.rating_card, null);
 
             TextView textView = cardView.findViewById(R.id.rating_name);
             textView.setText(set.getValue().getName());
 
             RatingBar rating_skills = cardView.findViewById(R.id.rating_skills);
-            rating_skills.setRating(set.getValue().getSkillRating());
+            rating_skills.setRating(5);
 
             RatingBar rating_conduct = cardView.findViewById(R.id.rating_conduct);
-            rating_conduct.setRating(set.getValue().getSkillRating());
+            rating_conduct.setRating(5);
+
+            TextView textView1 = cardView.findViewById(R.id.player_position_id);
+            textView1.setText(set.getKey().name());
 
             layout.addView(cardView);
         }
@@ -57,7 +58,7 @@ public class RatingPopUp extends AppCompatActivity {
             }
         });
 
-        Button button_cancel = findViewById(R.id.confirm);
+        Button button_cancel = findViewById(R.id.cancel);
         button_cancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
