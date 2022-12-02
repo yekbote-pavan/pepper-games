@@ -74,13 +74,13 @@
         android:layout_width="match_parent"
         android:layout_height="544dp"
         android:layout_below="@id/all_events_my_events_button_layout"
-        android:layout_marginTop="1dp">
+        android:layout_marginTop="2dp">
 
         <LinearLayout
             android:id="@+id/event_outer_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"></LinearLayout>
+            android:orientation="vertical"/>
     </ScrollView>
 
     <LinearLayout
@@ -111,22 +111,20 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:backgroundTint="#00002229"
             android:contentDescription="sorting arrow"
-            android:scaleType="fitCenter"
             android:src="@drawable/arrow" />
     </LinearLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
-        android:layout_width="98dp"
+        android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_above="@id/hzlayout3"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:contentDescription="this is a floating button"
-        android:outlineSpotShadowColor="@color/white"
-        card_view:fabSize="mini" />
+        android:src="@drawable/ic_baseline_add_circle_24"
+        android:background="@drawable/add"/>
 </RelativeLayout>
 

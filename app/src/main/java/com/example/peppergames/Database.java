@@ -71,6 +71,7 @@ public class Database {
 
         events.add(amateurGame);
         events.add(proGame);
+        events.add(amateurGame);
     }
 
     public static List<Event> getEvents() {

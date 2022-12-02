@@ -121,14 +121,14 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/my_fab"
-        android:layout_width="98dp"
+        android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_above="@id/my_hzlayout3"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_baseline_add_circle_24"
         android:contentDescription="this is a floating button"
-        android:outlineSpotShadowColor="@color/white"
-        card_view:fabSize="mini" />
+        android:background="@drawable/add"/>
 </RelativeLayout>
 

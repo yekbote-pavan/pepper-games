@@ -49,6 +49,21 @@ public class RatingPopUp extends AppCompatActivity {
             layout.addView(cardView);
         }
 
+        cardView = (CardView) getLayoutInflater().inflate(R.layout.rating_card, null);
+        TextView textView = cardView.findViewById(R.id.rating_name);
+        textView.setText("Smit");
+
+        RatingBar rating_skills = cardView.findViewById(R.id.rating_skills);
+        rating_skills.setRating(5);
+
+        RatingBar rating_conduct = cardView.findViewById(R.id.rating_conduct);
+        rating_conduct.setRating(5);
+
+        TextView textView1 = cardView.findViewById(R.id.player_position_id);
+        textView1.setText("LST");
+
+        layout.addView(cardView);
+
         Button button_confirm = findViewById(R.id.confirm);
         button_confirm.setOnClickListener(new View.OnClickListener() {
             @Override
