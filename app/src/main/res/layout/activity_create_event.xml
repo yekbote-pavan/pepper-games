@@ -74,7 +74,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:progressTint="#FFEB3B"
-                android:rating="3"
+                android:rating="2"
                 android:scaleX="0.8"
                 android:scaleY="0.8"
                 android:translationX="180dp"
@@ -89,7 +89,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:progressTint="#FFEB3B"
-                    android:rating="3"
+                    android:rating="2"
                     android:scaleX="0.8"
                     android:scaleY="0.8"
                     android:translationX="180dp"
@@ -126,7 +126,7 @@
     </RelativeLayout>
 
     <TextView
-        android:layout_width="208dp"
+        android:layout_width="196dp"
         android:layout_height="72dp"
         android:text="Time :"
         android:textColor="#000000"
@@ -147,7 +147,7 @@
             android:id="@+id/time_picker"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="-30dp"
+            android:layout_marginLeft="-34dp"
             android:scaleX="1"
             android:timePickerMode="spinner" />
     </RelativeLayout>

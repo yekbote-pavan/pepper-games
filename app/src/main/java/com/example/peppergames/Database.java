@@ -1,5 +1,7 @@
 package com.example.peppergames;
 
+import android.util.Log;
+
 import com.example.peppergames.dto.Event;
 import com.example.peppergames.dto.PositionEnum;
 import com.example.peppergames.dto.TeamEnum;
@@ -14,7 +16,7 @@ public class Database {
 
     public static List<Event> events = new ArrayList<>();
 
-    private static final User appUser = new User("Pavan Yekbote", 3, 3,
+    private static final User appUser = new User("Pavan Yekbote", 2, 2,
             "I'm a freshman. " + "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
             22, 22, "Football", "22/01/2012", "profile_image_2");
 
@@ -25,9 +27,6 @@ public class Database {
         Map<PositionEnum, User> awayPositions = new HashMap<>();
         Map<TeamEnum, Map<PositionEnum, User>> positions = new HashMap<>();
 
-//        User Pavan = new User("Pavan Yekbote", 3, 5, "I'm a freshman. " +
-//                "I have played football for about 3-4 years now on a regular basis. I'm looking to make some friends and have fun!",
-//                22, 22, "Football", "22/01/2012");
         User Avram = new User("Avram", 5, 4, "I celebrate a victory when I start walking off the field. " +
                 "By the time I get to the locker room, I’m done.",
                 232, 2, "Football", "12/11/2021", "profile_image_1");
@@ -41,16 +40,15 @@ public class Database {
         homePositions.put(PositionEnum.GK, Avram);
         homePositions.put(PositionEnum.RST, Pratt);
         homePositions.put(PositionEnum.CM, Nora);
-
-//        awayPositions.put(PositionEnum.LST, Pavan);
         awayPositions.put(PositionEnum.CM, Smith);
+        awayPositions.put(PositionEnum.GK, getAppUser());
 
         positions.put(TeamEnum.HOME, homePositions);
         positions.put(TeamEnum.AWAY, awayPositions);
 
-        Event amateurGame = new Event(
-                "Football", 1, 1, "06 AM, 19 Nov", 12,
-                "ARC", false, positions);
+        Event playingAmateurGame = new Event(
+                "Football", 1, 1, "09 AM, 19 Nov", 12,
+                "ARC", true, positions);
 
 
         Map<PositionEnum, User> homePositions2 = new HashMap<>();
@@ -60,17 +58,66 @@ public class Database {
 
         Map<PositionEnum, User> awayPositions2 = new HashMap<>();
         awayPositions2.put(PositionEnum.CM, Smith);
-        awayPositions2.put(PositionEnum.GK, getAppUser());
 
         Map<TeamEnum, Map<PositionEnum, User>> positions2 = new HashMap<>();
         positions2.put(TeamEnum.HOME, homePositions2);
         positions2.put(TeamEnum.AWAY, awayPositions2);
-        Event proGame = new Event(
-                "Football", 5, 4, "07 PM, 19 Nov", 12
+
+        Event proGameNA = new Event(
+                "Football", 5, 4, "11 AM, 19 Nov", 12
                 , "ARC", false, positions2);
 
-        events.add(amateurGame);
-        events.add(proGame);
+
+        Map<PositionEnum, User> homePositions3 = new HashMap<>();
+        homePositions3.put(PositionEnum.GK, Avram);
+        homePositions3.put(PositionEnum.RST, Pratt);
+        homePositions3.put(PositionEnum.CM, Nora);
+
+        Map<PositionEnum, User> awayPositions3 = new HashMap<>();
+        awayPositions3.put(PositionEnum.CM, Smith);
+
+        Map<TeamEnum, Map<PositionEnum, User>> positions3 = new HashMap<>();
+        positions3.put(TeamEnum.HOME, homePositions3);
+        positions3.put(TeamEnum.AWAY, awayPositions3);
+
+        Event joinAbleGame = new Event("Football", 2, 2, "06 AM, 18 Nov", 12, "CRCE", false, positions3);
+
+        Map<PositionEnum, User> homePositions4 = new HashMap<>();
+        homePositions4.put(PositionEnum.GK, Avram);
+        homePositions4.put(PositionEnum.RST, Pratt);
+        homePositions4.put(PositionEnum.CM, Nora);
+
+        Map<PositionEnum, User> awayPositions4 = new HashMap<>();
+        awayPositions4.put(PositionEnum.CM, Smith);
+
+        Map<TeamEnum, Map<PositionEnum, User>> positions4 = new HashMap<>();
+        positions4.put(TeamEnum.HOME, homePositions4);
+        positions4.put(TeamEnum.AWAY, awayPositions4);
+
+        Event basketball = new Event("Basketball", 3, 3, "05 AM, 18 Nov", 12, "CRCE", false, positions4);
+
+        Map<PositionEnum, User> homePositions5 = new HashMap<>();
+        Map<PositionEnum, User> awayPositions5 = new HashMap<>();
+        Map<TeamEnum, Map<PositionEnum, User>> positions5 = new HashMap<>();
+
+        homePositions5.put(PositionEnum.GK, Avram);
+        homePositions5.put(PositionEnum.RST, Pratt);
+        homePositions5.put(PositionEnum.CM, Nora);
+        awayPositions5.put(PositionEnum.CM, Smith);
+        awayPositions5.put(PositionEnum.GK, getAppUser());
+
+        positions5.put(TeamEnum.HOME, homePositions5);
+        positions5.put(TeamEnum.AWAY, awayPositions5);
+
+        Event basketballPlaying = new Event(
+                "Basketball", 2, 2, "07 AM, 18 Nov", 12,
+                "ARC", true, positions5);
+
+        events.add(playingAmateurGame);
+        events.add(proGameNA);
+        events.add(joinAbleGame);
+        events.add(basketball);
+        events.add(basketballPlaying);
     }
 
     public static List<Event> getEvents() {
@@ -97,9 +144,10 @@ public class Database {
     }
     public static Map<PositionEnum, User> getHomeTeam(int eventIndex){
         Event event = getEvents().get(eventIndex);
-        Map<PositionEnum, User> positionsMap = event.getTeamPositions().get(TeamEnum.HOME);
-        return positionsMap;
+        Log.println(Log.ASSERT, "event", String.valueOf(event.getDate()));
+        return event.getTeamPositions().get(TeamEnum.HOME);
     }
+
     public static User getAppUser() {
         return appUser;
     }

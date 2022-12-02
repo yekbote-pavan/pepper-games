@@ -5,6 +5,7 @@ import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import com.example.peppergames.dto.PositionEnum;
 import com.example.peppergames.dto.User;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class RatingPopUp extends AppCompatActivity {
@@ -25,12 +27,20 @@ public class RatingPopUp extends AppCompatActivity {
         setContentView(R.layout.activity_rating_pop_up);
         LinearLayout layout = findViewById(R.id.rate_your_teammates_lr);
         CardView cardView;
-        Map<PositionEnum, User> positionsMap;
+        Map<PositionEnum, User> positionsMap = new HashMap<>();
 
-        int event_idx=0;
-        positionsMap = Database.getHomeTeam(0);
+        User Avram = new User("Avram", 5, 4, "I celebrate a victory when I start walking off the field. " +
+                "By the time I get to the locker room, I’m done.",
+                232, 2, "Football", "12/11/2021", "profile_image_1");
+        User Pratt = new User("Pratt", 2, 1, "I figure practice puts your brains in your muscles.",
+                45, 37, "Football", "03/05/2011", "profile_image_3");
+        User Nora = new User("Nora", 2, 5, "hiii",
+                5, 0, "Football", "22/01/2202", "profile_image_5");
 
-        // Iterator
+        positionsMap.put(PositionEnum.GK, Avram);
+        positionsMap.put(PositionEnum.RST, Pratt);
+        positionsMap.put(PositionEnum.CM, Nora);
+
         for (Map.Entry<PositionEnum, User> set : positionsMap.entrySet()){
             cardView = (CardView) getLayoutInflater().inflate(R.layout.rating_card, null);
 

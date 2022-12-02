@@ -53,7 +53,12 @@ public class AllEventsActivity extends AppCompatActivity {
             filters[3] = true;
         }
 
-        boolean arrowDown = intent.getBooleanExtra("sorting_down", true);
+        String sort = intent.getStringExtra("sort");
+        boolean arrowDown = intent.getBooleanExtra("sorting_down", sort != null);
+        if (sort == null) {
+            sort = "Date";
+        }
+
         boolean gamesICanJoin = intent.getBooleanExtra("games_i_can_join", true);
 
         int myEventsCount = 0;
@@ -65,11 +70,6 @@ public class AllEventsActivity extends AppCompatActivity {
 
         Button myEventsButton = findViewById(R.id.my_events_button);
         myEventsButton.setText(String.format("MY EVENTS (%d)", myEventsCount));
-
-        String sort = intent.getStringExtra("sort");
-        if (sort == null) {
-            sort = "Date";
-        }
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             if (sort.equals("Conduct")) {
@@ -109,14 +109,17 @@ public class AllEventsActivity extends AppCompatActivity {
                     if (!filters[1]) {
                         continue;
                     }
+                    break;
                 case "Tennis":
                     if (!filters[2]) {
                         continue;
                     }
+                    break;
                 case "Football":
                     if (!filters[3]) {
                         continue;
                     }
+                    break;
             }
 
             if (gamesICanJoin) {
@@ -322,7 +325,7 @@ public class AllEventsActivity extends AppCompatActivity {
                 sortPopup.dismiss();
                 finish();
                 intent.putExtra("sort", "Date");
-                intent.putExtra("sorting_down", true);
+                intent.putExtra("sorting_down", false);
                 startActivity(getIntent());
             }
         });

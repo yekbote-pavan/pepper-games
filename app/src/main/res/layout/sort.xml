@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/conduct_sort"
+            android:backgroundTint="#4CAF50"
             android:text="Conduct">
         </Button>
 
@@ -29,6 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/skill_sort"
+            android:backgroundTint="#4CAF50"
             android:text="Skill">
         </Button>
 
@@ -36,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/date_sort"
+            android:backgroundTint="#4CAF50"
             android:text="Date">
         </Button>
     </LinearLayout>

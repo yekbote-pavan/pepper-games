@@ -59,11 +59,12 @@ public class MyEventsActivity extends AppCompatActivity {
         boolean focusable = true;
         PopupWindow confirmLeavePopup = new PopupWindow(confirmLeave, width, height, focusable);
 
-        boolean arrowDown = intent.getBooleanExtra("sorting_down", true);
         String sort = intent.getStringExtra("sort");
+        boolean arrowDown = intent.getBooleanExtra("sorting_down", sort != null);
         if (sort == null) {
             sort = "Date";
         }
+
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
             if (sort.equals("Conduct")) {
@@ -105,14 +106,17 @@ public class MyEventsActivity extends AppCompatActivity {
                     if (!filters[1]) {
                         continue;
                     }
+                    break;
                 case "Tennis":
                     if (!filters[2]) {
                         continue;
                     }
+                    break;
                 case "Football":
                     if (!filters[3]) {
                         continue;
                     }
+                    break;
             }
 
             myEventsCount++;
@@ -221,7 +225,7 @@ public class MyEventsActivity extends AppCompatActivity {
 
 
         View filter = getLayoutInflater().inflate(R.layout.multiselect, null);
-        int filterWidth = LinearLayout.LayoutParams.WRAP_CONTENT;
+        int filterWidth = LinearLayout.LayoutParams.MATCH_PARENT;
         int filterHeight = LinearLayout.LayoutParams.WRAP_CONTENT;
         boolean filterFocusable = true;
         PopupWindow filterPopup = new PopupWindow(filter, filterWidth, filterHeight, filterFocusable);
@@ -356,7 +360,7 @@ public class MyEventsActivity extends AppCompatActivity {
                 sortPopup.dismiss();
                 finish();
                 intent.putExtra("sort", "Date");
-                intent.putExtra("sorting_down", true);
+                intent.putExtra("sorting_down", false);
                 startActivity(getIntent());
             }
         });
